@@ -1,8 +1,8 @@
 # Site wide configuration
 
-title: Site Title
+title: gmaslowski.com
 locale: en_US
-description: Describe your website here.
+description: on software development
 logo: site-logo.png
 search: true
 url: http://gmaslowski.github.io
