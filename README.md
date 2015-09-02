@@ -1,103 +1,35 @@
-Up
---------------
+# *folio
+A simple theme for showcasing your work, emphasis on whitespace, transparency, and helvetica. 
 
-Up is a clean and beautiful [Bootstrap](http://getbootstrap.com) based layout
-for [Jekyll](https://github.com/mojombo/jekyll).
+<a href="http://liabogoev.com/-folio">Live Demo</a>
 
-This is designed to be an easy layout to modify for your own blog. It is
-based on [zachholman's](http://zachholman.com/) blog themes: the "old" one, now
-opensourced as [left](http://github.com/holman/left), and also in his actual
-theme, that's not opensource (I believe), but I stole some ideas anyway. I also
-took something from [jekyll-bootstrap](https://github.com/plusjade/jekyll-bootstrap),
-and, of course, I'm using [bootstrap](https://github.com/twitter/bootstrap) as
-a base for whole thing.
+## Features
 
-![Up 2](http://f.cl.ly/items/1k0B3m21451e0G1i3u0F/up_v2.png)
+### Collections
+This Jekyll theme implements collections to let you break up your work into categories. The example is divided into poetry and portfolio, but easily revamp this into recipes, apps, short stories, limmericks, whatever your creative work is. 
+> To do this, edit the collections in the config file, create a corresponding folder, and update the portfolio and poetry source files. 
 
-## Installation
+Three different layouts are included—the poetry layout, for a simple list of entries, the blog layout (index.html), for more detailed descriptive list of entries, and the portfolio layout. The portfolio layout overlays a descriptive hoverover on a background image. If no image is provided, the square is auto-filled with the chosen theme color. Thumbnail sizing is not necessary, as the grid crops images perfectly. 
 
-- [Fork this repository](https://github.com/caarlos0/up/fork)
-- Rename it to `YOUR-USER.github.io`
-- Clone it: `git clone https://github.com/YOUR-USER/YOUR-USER.github.io`
-- With Ruby, bundler, Node.js and NPM previously installed, run the init script
-`bundle && rake init`;
-- Start it up in watch mode: `foreman start -f Procfile.dev`.
+### Theming
+Six beautiful theme colors have been selected to choose from. The default is red, but quickly change it by editing the _base.scss file in line 40. The color variable are listed there, as well. 
 
-You should have a server up and running locally at <http://localhost:4000>.
+### Photos
+Photo formatting is made simple using rows of a 3-column system. Make photos 1/3, 2/3, or full width. Easily create beautiful grids within your blog posts and projects pages. 
 
-## Customization
-
-Next you'll want to change a few things. The list of files you may want to
-change is the following:
-
-- [_config.yml](https://github.com/caarlos0/up/blob/gh-pages/_config.yml): Put
-your config there, almost everything will be up and running.
-- [about/index.html](https://github.com/caarlos0/up/blob/gh-pages/about/index.html):
-Well, that's about you, I would change it if I were you... OH WAIT!
-- [CNAME](https://github.com/caarlos0/up/blob/gh-pages/CNAME): If you're using
-this on GitHub Pages with a custom domain name, you might want to change this to be
-the domain you're going to use. All that should be in here is a
-domain name on the first line and nothing else (like: `example.com`).
-- [favicon.ico](https://github.com/caarlos0/up/blob/gh-pages/favicon.ico): This
-is a smaller version of my gravatar for use as the icon in your browser's
-address bar. You may change it to whatever you like. [Updating your icons][up-icons].
-- [apple-touch-icon.jpg](https://github.com/caarlos0/up/blob/gh-pages/apple-touch-icon.jpg):
-Again, this is my gravatar, and it shows up in iOS and various other apps
-that use this file as an "icon" for your site. [Updating your icons][up-icons].
-
-[up-icons]: https://github.com/caarlos0/up#update-favicon-and-apple-precomposed-icons-based-on-gravatar
-
-### Custom CSS/JS
-
-Assets are now managed by bower. You could simply run `grunt` whenever you
-want to update your assets. `grunt watch` will also watch everything for
-changes.
-
-Note: I'm not using any Jekyll asset pipeline because it's not supported
-by [GitHub Pages](http://pages.github.com), so, I prefer to do it by myself.
+### Code Highlighting
+This theme implements Jekyll's built in code syntax highlighting with Pygments. Just use a liquid tag to delineate your code: 
+{% highlight python %}
+	code code code
+{% endhighlight %}
 
 
-### Update `favicon` and `apple-precomposed` icons based on gravatar
+<hr/>
+The MIT License (MIT)
+Copyright (c) [year] [fullname]
 
-First, be sure you have the author email configured in `_config.yml`,
-then, just run:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-```sh
-rake icons
-```
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-The script will generate your email hash and get your gravatar, then, using
-RMagick, it will create all needed icons.
-
-
-## Deployment
-
-You should deploy with [GitHub Pages](http://pages.github.com)- it's just
-easier.
-
-All you should have to do is to rename your repository on GitHub to be
-`username.github.io`. Since this is a Jekyll project, you
-should be able to see your new site at <http://username.github.io>.
-
-## Licensing
-
-This is [MIT](https://github.com/caarlos0/up/blob/master/LICENSE) with no
-added caveats, therefore feel free to use this on your site without
-linking back to me or using a disclaimer or anything silly like that.
-
-If you'd like give [me](http://github.com/caarlos0),
-[holman](http://github.com/holman)
-(from [left](http://github.com/holman/left) layout),
-[plusjade](https://github.com/plusjade)
-(from [jekyll-bootstrap](https://github.com/plusjade/jekyll-bootstrap)),
-[fat](https://github.com/fat) and [mdo](https://github.com/mdo) (from
-[bootstrap](https://github.com/twitter/bootstrap)) credit somewhere on your
-all-new blog or tweet a shout out to us, well hey, sure we'll take it.
-
-## Donate
-
-You can also thank me doing a donation =)
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DXEJBUD2KYT7L)
-
-Thanks.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
