@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Another one on Enterprise JavaBeans vs. Spring
-date: 2014-03-14 15:09:00
-description: an example of a blog post with some code
+title: Another one on.. Spring Framework and Enterprise JavaBeans
+date: 2014-03-03
+description: written for Future Processing technical blog.
 ---
 This theme implements a built-in Jekyll feature, the use of Pygments, for sytanx highlighting. It supports more than 100 languages. This example is in C++. All you have to do is wrap your code in a liquid tag: 
 {% raw  %}
