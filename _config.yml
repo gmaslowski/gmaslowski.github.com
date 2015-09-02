@@ -1,56 +1,17 @@
-# Site wide configuration
-
-title: gmaslowski.com
-locale: en_US
-description: on software development
-logo: site-logo.png
-search: true
-url: http://gmaslowski.github.io
-
-# Jekyll configuration
-
-permalink:   /:categories/:title/
-markdown:    kramdown
-highlighter: pygments
-sass:
-  sass_dir: _sass
-  style: compressed
-gems:
-  - jekyll-sitemap
-
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..2
-  use_coderay: false
-
-mathjax: true
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md", "vendor"]
-
-
-# Site owner
-owner:
-  name: Greg Maslowski
-  avatar: bio-photo.jpg
-  email: gregmaslowski@gmail.com
-  disqus-shortname:
-  twitter: gmaslowski
-  facebook: #username
-  github: gmaslowski
-  stackexchange: #http://stackoverflow.com/users/123456/username
-  linkedin: gmaslowski
-  instagram: #username
-  flickr: #username
-  tumblr: #username
-  pinterest: #username
-  weibo: #userid
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
+markdown: rdiscount
+pygments: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+exclude: [ Gemfile, Gemfile.lock, gems, _assets, bower_components ]
+title : Carlos Becker
+production_url : http://carlosbecker.com
+description: "Througths, flamewars, utilities, tutorials, codes, projects and other things by Carlos Alexandro Becker."
+disqus_shortname: caarlos0blog
+analytics: UA-32899481-1
+gauges: 50f2b533613f5d7c8000000c
+author :
+  name : Carlos Alexandro Becker
+  github : caarlos0
+  twitter : caarlos0
+  email: caarlos0@gmail.com
