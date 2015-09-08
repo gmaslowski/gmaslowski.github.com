@@ -15,8 +15,8 @@ document the architecture of the underlying actor model. I didn't want to use an
 I don't like the drawback of being forced to maintain multiple file versions of created diagram or to export the jpg/png/svg
 file to include it into wiki.
 
-So while searching the depths of internet I've come across [yUml](http://yuml.me/). It turned out great for my needs.
-It allows you to create simple diagrams from plain text! For me it's great, since I can simply write such diagram and put 
+So while searching the depths of internet I've come across [yUml](http://yuml.me/). It turned out to be great for my needs.
+It allows creation of simple diagrams from plain text! For me it's great, since I can simply write such diagram and put 
 it into code repository. That's it. 
 
 ## Possibilities
@@ -32,6 +32,7 @@ So lets examine some easy class diagram:
 {% endhighlight %}
 
  What we can expect from the output image? So there should be:
+ 
 - a *Customer* entity
     - with forname, surname fields
     - with doShiz() method
@@ -49,7 +50,12 @@ So lets take a brief look at the result:
 
 Yay!. That's what it is all about. It's also easy to include into markdown:
 
+{% highlight ruby %}
+![Diagram](http://yuml.me/diagram/scruffy/class/[Customer|-forname:string;surname:string|doShiz()]<>-orders*>[Order],[Order]++-0..*>[LineItem],[Order]-[note:Aggregate root{bg:wheat}])
+{% endhighlight %}
+
  More examples can be found here:
+ 
 - [class diagram](http://yuml.me/diagram/scruffy/class/samples)
 - [activity diagram](http://yuml.me/diagram/scruffy/activity/samples)
 - [use case diagram](http://yuml.me/diagram/scruffy/usecase/samples)
@@ -63,7 +69,7 @@ are structured in my application.
 ![Actor System Overview](http://yuml.me/diagram/scruffy/class/[note:Distractor ActorSystem {bg:wheat}],[Distractor {bg:lightskyblue}]++-1>[ReactorRegistry {bg:lightskyblue}],[Distractor {bg:lightskyblue}]++-1>[ReactorTransportMixer {bg:lightskyblue}],[Distractor {bg:lightskyblue}]++-1>[TransportRegistry {bg:lightskyblue}],[TransportRegistry {bg:lightskyblue}]<>-0..*>[*Transport {bg:lightsalmon}],[ReactorRegistry {bg:lightskyblue}]<>-0..*>[*Reactor {bg:lightsalmon}])
 
 ## Drawbacks
-Of course as to all tools, there are some compromises or even flaws. What I've found most disturbing was the fact, that 
+Of course as to all tools, there are some compromises. What I've found most disturbing was the fact, that 
 referencing entities with additionals (colors, fields or others) doesn't work if the entity isn't placed with them
 every time it is referenced. So I can imagine that creating more complex diagrams could be a pain.
 
