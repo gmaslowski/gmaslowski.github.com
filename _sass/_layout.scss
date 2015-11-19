@@ -147,6 +147,7 @@
   @include media-query($on-laptop) {
     font-size: 22px;
   }
+  color: $blue-light;
 }
 
 .post-content {
