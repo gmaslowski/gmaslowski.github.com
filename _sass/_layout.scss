@@ -115,6 +115,10 @@
   font-size: 20px;
 }
 
+.post-list h2 > a {
+  font-weight: normal !important;
+}
+
 .post-list {
   margin: 0px 0;
   list-style: none;
@@ -199,7 +203,7 @@
 }
 
 /** Code background */
-.highlight pre, .highlight span, .highlight code{
+.highlight pre, .highlight span, .highlight code {
   font-size: 13px;
   background-color: $grey-color-light-light;
 }
