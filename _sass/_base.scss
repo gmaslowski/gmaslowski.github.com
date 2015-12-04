@@ -139,7 +139,8 @@ blockquote {
   color: $text-color;
   border-left: 10px solid $grey-color-light;
   padding-left: $horizontal-spacing-unit / 2;
-  font-size: 18px;
+  margin-top: 15px;
+  font-size: inherit;
   font-style: italic;
 
   > :last-child {
