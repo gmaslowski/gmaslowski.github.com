@@ -8,8 +8,10 @@ description: projects which I commit to
 <ul class="post-list">
 {% for project in site.projects reversed %}
     <li>
-        <h2><a class="poem-title" href="{{ poem.url | prepend: site.baseurl }}">{{ poem.title }}</a></h2>
-        <p class="post-meta">{{ poem.date | date: '%B %-d, %Y' }}</p>
+        <h2><a class="project-title" href="{{ project.link }}">{{ project.title }}</a></h2>
+        <p class="post-meta">{{ project.description | date: '%B %-d, %Y' }}</p>
+        <p class="post-meta">{{ project.date | date: '%B %-d, %Y' }}</p>
+        <p class="post-meta"><a href="{{ project.link }}">{{ project.link }}</a></p>
       </li>
 {% endfor %}
 </ul>
