@@ -142,6 +142,7 @@
 
 .post-title {
   font-size: 22px;
+  font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
   @include media-query($on-laptop) {
@@ -152,7 +153,8 @@
 .post-content {
   h2 {
     font-size: 19px;
-    margin-bottom: 7px;
+    font-weight: bold;
+    margin-bottom: 10px;
     border-bottom: 1px solid;
     border-bottom-color: $grey-color-light;
     @include media-query($on-laptop) {
@@ -161,9 +163,11 @@
   }
   h3 {
     font-size: 18px;
+    font-weight: 600;
     @include media-query($on-laptop) {
       font-size: 18px;
     }
+    margin-bottom: 5px;
   }
   h4 {
     font-size: 17px;
