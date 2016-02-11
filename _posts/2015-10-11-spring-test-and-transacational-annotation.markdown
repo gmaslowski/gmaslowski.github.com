@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Spring Test and @Transactional
+comments: true
 date: 2015-10-11
 description: Seamless work with Spring-Test and @Transactional
 ---
@@ -31,7 +32,8 @@ what impact will it have, how to handle the preparation of test data? I hope tha
 think I'll be able to give some light on that topic.
 
 But before diving a little bit deeper let me just explain how do I tend to split my integration tests in a normal 
-Spring based application.
+Spring based application. By saying integration, I have in mind tests, which in spring-testing context, are actually 
+starting the spring context during such test.
 
 ## Difference between @Repository and @Service testing
 
@@ -67,21 +69,21 @@ public class CustomerService {
 }
 {% endhighlight %}
 
-### @Repository integration test
+## @Repository integration test
 
 With testing at this level what I usually want to test is: 
 - the actual connection to the database 
 - the queries that I've written
 - JPA mapping correctness
 
-So basically such test would more or less look something like this:
+So basically such test could more or less look something like this:
 
 
-### @Service integration test
+## @Service integration test
 
 But what I'd like to achieve when testing services in a spring-test integration manner? Well, actually for me this is 
 an integration test which verifies the system from the uppermost input to my application, through all connected pieces, 
-right  to the external systems (like the database). Though, I tend to mock/stub all of the external parts, so that I only 
+right to the external systems (like the database). Though, I tend to mock/stub all of the external parts, so that I only 
 test the logic which I've written in integration. Being that said, I also test service layer with unit tests.  
  
 As it comes from the uppermost input into the system, I tend to leave out the controller level. Mostly it's task is to 
