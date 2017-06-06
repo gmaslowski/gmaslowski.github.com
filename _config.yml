@@ -6,7 +6,7 @@ url:  http://gmaslowski.com
 twitter_username: gmaslowski
 github_username:  gmaslowski
 
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-assets]
 
 # Build settings
 markdown: kramdown
@@ -20,3 +20,11 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+
+assets:
+  prefix: "/assets"
+  assets:
+    - "*.png"
+    - "*.jpg"
+  sources:
+    - "_assets"
