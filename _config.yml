@@ -2,9 +2,11 @@
 title: on software development // gmaslowski.com
 email: gregmaslowski@gmail.com
 description: on software development
-url:  # the base hostname & protocol for your site
+url:  http://gmaslowski.com
 twitter_username: gmaslowski
 github_username:  gmaslowski
+
+gems: [jekyll-paginate]
 
 # Build settings
 markdown: kramdown
