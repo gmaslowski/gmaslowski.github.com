@@ -10,7 +10,7 @@ gems: [jekyll-paginate]
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+highlighter: pygments
 
 # Pagination
 paginate: 15
