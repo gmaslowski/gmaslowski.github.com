@@ -104,5 +104,5 @@ a description for docker repository, so I don't have to maintain description in 
 ## Links
 
 - source code [https://github.com/gmaslowski/docker-java](http://github.com/gmaslowski/docker-java)
-- builds [https://travis-ci.org/gmaslowski/docker-java] (https://travis-ci.org/gmaslowski/docker-java)
+- builds [https://travis-ci.org/gmaslowski/docker-java](https://travis-ci.org/gmaslowski/docker-java)
 - images on docker repository [https://hub.docker.com/r/gmaslowski/jdk/](https://hub.docker.com/r/gmaslowski/jdk/)
