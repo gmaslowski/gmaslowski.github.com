@@ -26,16 +26,16 @@ It integrates with GitHub seamlessly and my other projects are also built with i
 ## Travis CI configuration
 
 The basic Travis configuration is actually pretty straightforward. You start with an indication, that the project is a docker project:
-```
+{% highlight yaml %}
 sudo: required
 
 services:
   - docker
-```
+{% endhighlight %}
 
 More documentation about how to use docker in build can be found here: [https://docs.travis-ci.com/user/docker/](https://docs.travis-ci.com/user/docker/). Then comes the actual building script which is
 building the image:
-```
+{% highlight yaml %}
 script:
   - export TAG_JDK=gmaslowski/jdk:$TRAVIS_COMMIT
   - export TAG_JRE=gmaslowski/jre:$TRAVIS_COMMIT
@@ -43,8 +43,8 @@ script:
   - docker run -it --rm -v "$(pwd)/jre8/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
   - docker build ./jdk8 -t $TAG_JDK
   - docker build ./jre8 -t $TAG_JRE
+{% endhighlight %}
 
-```
 Actually nothing spectacular is going on there. The commitId is used as a temporary tag/version of the image. Then the Dockerfile goes through some syntax checks thanks to the `redcoolbeans/dockerlint`
 image. Then just the image is being built and tag with the commitId. One thing to notice here is that everything is done twice. That's, because of convenience reasons, I'm building the JDK and JRE images
 in the same time. So far the configuration we have makes Travis verify and build the image on every commit for every branch and for every pull request submission.
@@ -52,7 +52,7 @@ That's cool also because GitHub and Travis integrate quite well. Every pull requ
 
 But hey, what about pushing to [Docker Hub](https://hub.docker.com/) repository - a place where everyone can host and share his public images? Well, in the beginning I've used the `after_success` section 
 of Travis configuration and the script looked similar to this:
-```
+{% highlight yaml %}
 after_success:
   - export JDK_VERSION_MINOR=`cat jdk8/Dockerfile | grep "ENV JAVA_VERSION_MINOR" | awk '{print $3}'`
   - export JRE_VERSION_MINOR=`cat jre8/Dockerfile | grep "ENV JAVA_VERSION_MINOR" | awk '{print $3}'`
@@ -69,7 +69,7 @@ after_success:
   - test $TRAVIS_BRANCH = "master" && docker push gmaslowski/jre:8
   - test $TRAVIS_BRANCH = "master" && docker push gmaslowski/jre:8u$JRE_VERSION_MINOR
   - test $TRAVIS_BRANCH = "master" && docker push gmaslowski/jre:latest
-```
+{% endhighlight %}
 
 Basically what is happening here is:
 
@@ -83,14 +83,14 @@ A perfect solution for storing credentials in such cases. In the script, the las
 I just want to push whenever changes were submitted, reviewed and checked. And it worked fine, for a while at least. Soon I've realized that for some reason (didn't investigate) pull 
 request built images were being pushed to docker hub. Well, that's not something I wanted. So with a little fiddleling I've changed the configuration a bit,
 by replacing `after_success` with `deploy` section:
-```
+{% highlight yaml %}
 deploy:
   skip_cleanup: true
   provider: script
   script: sh "./scripts/deploy.sh"
   on:
     branch: master
-```
+{% endhighlight %}
 
 - `skip_cleanup` - will not remove artifacts after the build phase, so they can be available in deploy phase
 - a script provider tells Travis that there's a script for deployment; note that as of writing this post it is in experimental state
