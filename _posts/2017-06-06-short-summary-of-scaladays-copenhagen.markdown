@@ -3,6 +3,13 @@ layout: post
 title: Short summary of Scaladays Copenhagen 2017
 date: 2017-06-06
 description: Some information about Scaladays which took place in Copenhagen at the end of May 2017.
+tag:
+- scala
+- conference
+- akka
+- programming
+author: gregmaslowski
+category: blog
 comments: true
 ---
 
