@@ -3,6 +3,15 @@ layout: post
 title: Beyond JUnit - Testing with Groovy and Spock
 date: 2015-12-04
 description: How to leverage the power of Groovy and Spock for testing Java applications.
+category: blog
+tag: 
+- java
+- groovy
+- testing
+- spock
+- mockito
+- mocks
+- junit
 comments: true
 ---
 

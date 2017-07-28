@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: Drawing simple diagrams with yUml
 date: 2015-09-08
+category: blog
 description: yUml - free online diagram generator
 ---
 
