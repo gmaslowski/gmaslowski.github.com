@@ -3,5 +3,7 @@ layout: post
 title: reactor
 date: 2014-05-25
 description: a lightweight, system resource friendly, system integration and data retrieval micro kernel intended to be stupid simple making development process easy and painless
+category: project
+projects: true
 link: https://github.com/FutureProcessing/reactor
 ---
