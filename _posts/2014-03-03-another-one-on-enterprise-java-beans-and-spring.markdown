@@ -3,6 +3,10 @@ layout: post
 comments: false
 title: Another one on.. Spring Framework and Enterprise JavaBeans
 date: 2014-03-03
+category: blog
+tag:
+- jee
+- spring
 description: written for Future Processing technical blog
 ---
 

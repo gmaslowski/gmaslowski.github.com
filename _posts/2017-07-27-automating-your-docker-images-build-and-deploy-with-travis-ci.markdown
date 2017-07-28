@@ -3,6 +3,12 @@ layout: post
 title: Automating your docker images build and deploy with Travis CI
 date: 2017-07-27
 description: A simple explanation of how I've set up automatic builds of my docker images.
+category: blog
+tag:
+- github
+- travis
+- continouos integration
+- docker
 comments: true
 ---
 
