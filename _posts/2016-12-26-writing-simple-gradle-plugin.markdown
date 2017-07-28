@@ -3,6 +3,7 @@ layout: post
 title: Writing simple Gradle plugin
 date: 2016-02-26
 description: Implementing simple Gradle plugin supporting property passing to test execution.
+category: blog
 comments: true
 ---
 
