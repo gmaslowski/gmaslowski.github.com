@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Passing node labels to pods in Kubernetes
-date: 2017-07-27
+date: 2018-09-20
 description: How I approached the problem of making cassandra aware of racks in Kubernetes.
 category: blog
 tag:
@@ -16,8 +16,8 @@ no problem with spinning a Cassandra cluster. Recently, however, because of our 
 
 ## Infrastructure
 
-The setup is(n't) straightforward. We have 6 VMs for Cassandra, which are group into 3 racks - 2 VM per rack. All of the VMs for cassandra are labeled in k8s, so that we guarantee with affinity rules, that 
-only Cassandra instances will be deployed there. Additionally the VMs are labeled with rack information: rack-1, rack-2, rack-3. This is precisely the information I needed to push down through Kubernetes
+The setup is(n't) straightforward. We have 6 VMs for Cassandra, which are grouped into 3 racks - 2 VMs per rack. All of the VMs for Cassandra are labeled in k8s, so that we guarantee with affinity rules, that 
+only Cassandra instances will be deployed there. Additionally the VMs are labeled with rack information: `rack-1`, `rack-2`, `rack-3`. This is precisely the information I needed to push down through Kubernetes
 to Cassandra itself.
 
 ## Kubernetes and DownwardAPI
@@ -91,7 +91,7 @@ Well. Almost. Quite. But not what I'd expect. Though the pod was labeled:
 {% highlight console %}
 kubernetes@node1:~# kubectl describe pod node2pod-557fb46b67-6qrgf
 Namespace:      default
-Node:           node7/10.48.99.83
+Node:           node7/<IP>
 Start Time:     Wed, 19 Sep 2018 10:20:33 +0200
 Labels:         app=node2pod
                 name=node2pod
@@ -99,7 +99,7 @@ Labels:         app=node2pod
                 vm/rack=rack-2 
 {% endhighlight %}
 
-the environment variable was empty inside the container. That's due to the fact, that the resolution of env vars with DownwardAPI happend dirung pods scheduling and not execution. Doh. So another brainer. But fortunately with little help of a teammate of mine I finally made
+the environment variable was empty inside the container. That's due to the fact, that the resolution of env vars with DownwardAPI happens during pods scheduling and not execution. Dohhh. So another brainer. But fortunately with little help of a teammate of mine I finally made
 it with the following approach
 
 ## Solution
