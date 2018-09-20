@@ -186,7 +186,7 @@ spec:
         emptyDir: {}
 {% endhighlight %}
 
-Uff. And that job yielded this result when 4 of the nodes were up:
+Uff and yay!. The following is the proof that 4 of the nodes were up with proper rack settings:
 
 {% highlight console %}
 root@cassandra-0:/# nodetool status
@@ -200,6 +200,8 @@ UN  10.35.128.4  103.64 KiB  256          49.3%             a7849387-2a55-448b-8
 UN  10.44.0.6    108.62 KiB  256          50.5%             2d1741cb-adff-4486-b1a8-b3b0fba410d2  rack-1
 UN  10.43.64.4   69.94 KiB  256          48.9%             131d4fc5-60ec-4944-aa29-sfbbfb23a706  rack2
 {% endhighlight %}
+
+Another job done!
 
 ## Links
 
