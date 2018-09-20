@@ -25,13 +25,13 @@ to Cassandra itself.
 After some quick investigation I found the [Kubernetes DownwardAPI](https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/#the-downward-api). Without too much of a 
 view I was sure that I can use any label specified on node and put it into the container environment variable:
 
-{%highlight yaml}
+{% highlight yaml %}
 env:
 - name: VM_LABEL
   valueFrom:
     fieldRef:
       fieldPath: metadata.label[label/vm]
-{%endhighlight}
+{% endhighlight %}
 
 Someone should have seen my face when I found out that you can only reference some restricted metadata with the DownwardAPI, and node
 labels isn't one of them. There are even couple of issues and feature requests opened on how to pass through a node label into the pod:
@@ -43,7 +43,7 @@ labels isn't one of them. There are even couple of issues and feature requests o
 So, ok, it's not that easy but it's not something that cannot be done right. In a moment I thought about using an `initContainer` to get the node label on which is the pod scheduled, and then add the label on to the pod.
 Shouldn't be that hard, right:
 
-{%highlight yaml}
+{% highlight yaml %}
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -85,7 +85,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.labels['vm/rack']
-{%endhighlight}
+{% endhighlight %}
 
 Well. Almost. Quite. But not what I'd expect. Though the pod was labeled:
 {%highlight bash}
@@ -97,7 +97,7 @@ Labels:         app=node2pod
                 name=node2pod
                 pod-template-hash=1139602623
                 vm/rack=rack-2 
-{%endhighlight}
+{% endhighlight %}
 
 the environment variable was empty inside the container. That's due to the fact, that the resolution of env vars with DownwardAPI happend dirung pods scheduling and not execution. Doh. So another brainer. But fortunately with little help of a teammate of mine I finally made
 it with the following approach
@@ -119,7 +119,7 @@ and one of them is `cassandra-rackdc.properties` which is the place where the ra
 
 For the purpose of readability, much configuration was removed
 
-{%highlight yaml}
+{% highlight yaml %}
 ---apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -184,7 +184,7 @@ spec:
           name: cassandra-rackdc
       - name: shared
         emptyDir: {}
-{%endhighlight}
+{% endhighlight %}
 
 Uff. And that job yielded this result when 4 of the nodes were up:
 
