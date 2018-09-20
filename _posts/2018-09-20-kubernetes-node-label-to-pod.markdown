@@ -188,7 +188,7 @@ spec:
 
 Uff. And that job yielded this result when 4 of the nodes were up:
 
-{% highlight bash %}
+{% highlight console %}
 root@cassandra-0:/# nodetool status
 Datacenter: datacenter
 ==============
