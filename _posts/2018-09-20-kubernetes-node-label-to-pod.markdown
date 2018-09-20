@@ -88,7 +88,7 @@ spec:
 {% endhighlight %}
 
 Well. Almost. Quite. But not what I'd expect. Though the pod was labeled:
-{%highlight bash}
+{% highlight console %}
 kubernetes@node1:~# kubectl describe pod node2pod-557fb46b67-6qrgf
 Namespace:      default
 Node:           node7/10.48.99.83
