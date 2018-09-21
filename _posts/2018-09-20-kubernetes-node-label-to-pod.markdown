@@ -120,7 +120,8 @@ and one of them is `cassandra-rackdc.properties` which is the place where the ra
 For the purpose of readability, much configuration was removed
 
 {% highlight yaml %}
----apiVersion: v1
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cassandra-rackdc
