@@ -212,3 +212,4 @@ Another job done!
 - [https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/#create-a-pod-that-has-an-init-container](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-initialization/#create-a-pod-that-has-an-init-container)
 - [https://github.com/kubernetes/kubernetes/issues/62078](https://github.com/kubernetes/kubernetes/issues/62078)
 - [https://stackoverflow.com/questions/36690446/inject-node-labels-into-kubernetes-pod](https://stackoverflow.com/questions/36690446/inject-node-labels-into-kubernetes-pod)
+- [https://gist.github.com/gmaslowski/117f3535173d733e007d0c6c83564888](https://gist.github.com/gmaslowski/117f3535173d733e007d0c6c83564888)
