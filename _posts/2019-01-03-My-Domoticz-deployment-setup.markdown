@@ -15,7 +15,7 @@ tag:
 comments: true
 ---
 
->> Disclaimer. I am using home automation software and hardware at home. But that's not the only way for me to control my appliances. I always make sure that in the case of any home automation failure I am still able to manually control them.
+> Disclaimer. I am using home automation software and hardware at home. But that's not the only way for me to control my appliances. I always make sure that in the case of any home automation failure I am still able to manually control them.
 
 Everyone interested in some home automation projects surely stumbled upon [Domoticz](https://www.domoticz.com) at some point. In general there are other solutions as well, but I won't describe them here. 
 
@@ -101,7 +101,7 @@ As stated previously I have some RPIs which I'd like to use to run Domoticz. Bas
 The hardware runs in the attic. I have the tendency to keep my travelling ;) there limited as much as possible. I wan't to be able to (to some extent) manage my hardware remotely. Of course, it's not possible to fix a physical error remotely, but removing the need to have a physical access to hardware is the goal.
 
 ### Ansible configuration
->> Before any more description, I'd like to made I thing clear, even for myself. For me it's not about using Ansible - for me it's about having *infrastructure/configuration-as-a-code* approach.
+> Before any more description, I'd like to made I thing clear, even for myself. For me it's not about using Ansible - for me it's about having *infrastructure/configuration-as-a-code* approach.
 
 My tool of choice for the time beeing is [Ansible](https://ansible.com). Why? Again, I'm in IT :D and:
 - Ansible is one of the standards used in industry
