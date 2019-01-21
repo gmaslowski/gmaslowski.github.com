@@ -17,7 +17,7 @@ I containerize... Why I containerize you might ask? Because of reasons:
 - automatically run software in a clustered and replicated scenarios
 - manage software in a common and straightforward way, by using container orchestrators like [Docker Swarm](https://docs.docker.com/engine/swarm/) or [Kubernetes](https://kubernetes.io/)
 
-As it is quite common in modern world, containerizing comes with a price to pay. And the price is called: *abstraction*. I remember someone said that 
+As it is quite common in modern world, containerizing comes with a price to pay. And the price is called: *abstraction*. I remember someone said that
 > Every abstraction layer solves one problem, by introducing ten different ones.
 
 Or something quite close to that. Of course, that is an oversimplication (still being true), but I wouldn't change the docker abstraction for now due to the benefits it gives us. This post, however, is not about the benefits but about a specific issue, which I was not aware of for quite a long time. It's related to running apps, commands inside containers - and more closely - about stopping them.
@@ -41,8 +41,8 @@ docker build --build-arg JAR_FILE=build/libs/docker-shell-vs-exec-0.0.1-SNAPSHOT
 {% endhighlight %}
 
 We would create two images:
-- `dsve:shell` - with command executing the Spring app in *shell form* 
-- `dsve:exec` - with command executing the Spring app in *exec form* 
+- `dsve:shell` - with command executing the Spring app in *shell form*
+- `dsve:exec` - with command executing the Spring app in *exec form*
 
 By running the following script, we would deploy and run our containers with *docker-compose*:
 
@@ -84,7 +84,7 @@ PID   USER     TIME   COMMAND
 The difference is easy to spot, the same *java* command, one started with `/bin/sh` and the other without it. 
 
 ## What Docker documentation says about those two forms?
-Well, it says many things, and it also describes the difference between *shell* and *exec* form. In my opinion, such *"details"* are often in places which are easy to overlook, and if you're as impatient and careless :) as I am - you probably will overlook them as well. Careful reading of the docker documentation is strongly advised - [https://docs.docker.com/engine/reference/builder/#entrypoint](https://docs.docker.com/engine/reference/builder/#entrypoint). 
+Well, it says many things, and it also describes the difference between *shell* and *exec* form. In my opinion, such *"details"* are often in places which are easy to overlook, and if you're as impatient and careless :) as I am - you probably will overlook them as well. Careful reading of the docker documentation is strongly advised - [https://docs.docker.com/engine/reference/builder/#entrypoint](https://docs.docker.com/engine/reference/builder/#entrypoint).
 
 ## Yes, ok, but what are those forms implying?
 
@@ -92,21 +92,21 @@ Well, it says many things, and it also describes the difference between *shell* 
 In a *shell form*, all environment variables will be evaluated as the actual provided command will be run within a shell by prepending `/bin/sh -c` before it, which can also be observed in the snippet from previous section. In the *exec form*, however, there is no shell processing involved and the executable is being called directly. So please make sure that your env vars are being substituted before or that the executable you invoke does it.
 
 ### RUN, ENTRYPOINT and CMD
-I don't want to focus on explaining the differences in much detail. 
-- `RUN` is being used when building the image, 
+I don't want to focus on explaining the differences in much detail.
+- `RUN` is being used when building the image,
 - `ENTRYPOINT` and `CMD` serve the purpose of starting the actuall container and parameterize it when needed.
 
 In this article [http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/](http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/) you can find a really great explanation of the difference and it really wouldn't make sense to duplicate the content. Additionally, the difference has also been explained quite well in the Docker documentation in the section [understand-how-cmd-and-entrypoint-interact](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
 
 ### Gracefully stopping a container
-But here we can get into troubles. If we try to stop a container with the *shell form* 
+But here we can get into troubles. If we try to stop a container with the *shell form*
 
 {% highlight bash %}
 /c/dev_env/projects/private/docker-shell-vs-exec (master)
 $ docker stop bd9
 {% endhighlight %}
 
-there's a significant time, which we might notice before the container stops. That's because we extended the `stop_grace_period` from the default 10s to 30s - mainly for the presentation purposes. But if you look closely into the logs, you won't find any information from the Spring application notifying that the system sent a `SIGTERM` signal. That's due to the fact that this signal was send actually to the shell, which doesn't pass any signals to the process it started. It is described in [Docker documentation](https://docs.docker.com/engine/reference/builder/#entrypoint), however it is quite easy to miss that - I know I was myself not aware of those implications for a long time. And hence, after the `stop_grace_period` passes, docker daemon sends a `SIGKILL` signal causing the container to stop, forcefully. 
+there's a significant time, which we might notice before the container stops. That's because we extended the `stop_grace_period` from the default 10s to 30s - mainly for the presentation purposes. But if you look closely into the logs, you won't find any information from the Spring application notifying that the system sent a `SIGTERM` signal. That's due to the fact that this signal was send actually to the shell, which doesn't pass any signals to the process it started. It is described in [Docker documentation](https://docs.docker.com/engine/reference/builder/#entrypoint), however it is quite easy to miss that - I know I was myself not aware of those implications for a long time. And hence, after the `stop_grace_period` passes, docker daemon sends a `SIGKILL` signal causing the container to stop, forcefully.
 
 On the other hand, the *exec form* stops almost immediately
 {% highlight bash %}
@@ -131,9 +131,9 @@ $ docker logs f0a --tail=10
 2019-01-21 18:21:42.425  INFO 1 --- [      Thread-11] o.e.jetty.server.handler.ContextHandler  : Stopped o.s.b.c.e.j.JettyEmbeddedWebAppContext@50d0686{/,[file:///tmp/jetty-docbase.3963833647300409511.8080/],UNAVAILABLE}
 {% endhighlight %}
 
-And that's the crucial part. In best case scenario, the problems will only cause longer waits for the container to stop. But in worst case scenario, if the application doesn't free any used resources (like database connections, locks etc.)... yeah, you can imagine the consequences. 
+And that's the crucial part. In best case scenario, the problems will only cause longer waits for the container to stop. But in worst case scenario, if the application doesn't free any used resources (like database connections, locks etc.)... yeah, you can imagine the consequences.
 
-I spotted similar issues while working with k8s as the container orchestrator. And this should be fully understandable. The container in the pod tries to handle the `SIGTERM` signal, and if it doesn't, the orchestrator will `SIGKILL` it.  
+I spotted similar issues while working with k8s as the container orchestrator. And this should be fully understandable. The container in the pod tries to handle the `SIGTERM` signal, and if it doesn't, the orchestrator will `SIGKILL` it.
 
 ### Extra
 In my current project we use, amongst others, [Sbt](https://www.scala-sbt.org/). It has its own plugin for creating docker images - [sbt-native-packager](https://www.scala-sbt.org/sbt-native-packager/formats/docker.html), please be careful when choosing `Cmd` over `ExecCmd` :D.
