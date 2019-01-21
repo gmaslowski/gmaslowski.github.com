@@ -27,10 +27,10 @@ Or something quite close to that. Of course, that is an oversimplication (still 
 I have created a sample project for this post, which can be found at [https://github.com/gmaslowski/docker-shell-vs-exec](https://github.com/gmaslowski/docker-shell-vs-exec). This project has a simple Spring based app and some Docker descriptor files, for building images and setting up container with *docker-compose* (please note, that described issues should correspond to any form of starting a docker container).
 
 The simple snippet project focuses on two ways of executing commands inside a docker container:
-- *shell form*
-- *exec form*
+- *shell form* - example: `ENTRYPOINT java XX:+ExitOnOutOfMemoryError Djava.security.egd=file:/dev/./urandom -jar /app.jar`
+- *exec form* - example: `ENTRYPOINT ["java", "-XX:+ExitOnOutOfMemoryError", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar"]`
 
-If we build the application and the docker images, as specified in the `README`, like this:
+Both will have the same effect, at least when it comes to running containers on top of those images. If we build the application and the docker images, as specified in the `README`, like this:
 
 {% highlight bash %}
 ./gradlew clean build
