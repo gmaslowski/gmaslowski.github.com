@@ -4,6 +4,7 @@ title: My Domoticz deployment setup
 date: 2019-01-03
 description: How do I tackle domoticz deployment at home
 category: blog
+image: assets/rpis-rack.jpg
 tag:
 - linux
 - domoticz

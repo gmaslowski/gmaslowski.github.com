@@ -11,6 +11,7 @@ tag:
 author: gregmaslowski
 category: blog
 comments: true
+image: assets/scala_1.jpg
 ---
 
 Recently I have attended the [Scaladays](http://event.scaladays.org/scaladays-cph-2017) conference which took place at 31.05.2017 - 02.06.2017 in Copenhagen. During my 

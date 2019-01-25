@@ -1,0 +1,32 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body id="homepage">
+
+  <div class="block-left">
+    <div class="content">
+      {% include left.html %}
+    </div>
+  </div>
+
+  <div class="block-right">
+
+    {% include links.html %}
+    
+    <div class="content">
+      <div class="about-info">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+  {% include overlay.html %}
+  {% include scripts.html %}
+  <script src="{{ site.url }}/assets/js/canvas.js"></script>
+</body>
+
+</html>

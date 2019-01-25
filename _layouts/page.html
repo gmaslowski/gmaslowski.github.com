@@ -1,8 +1,42 @@
 ---
-layout: default
+layout: compress
 ---
-{% include header.html %}
 
-{{content}}
+<!DOCTYPE html>
+<html>
+{% include head.html %}
 
-{% include footer.html %}
+<body id="posts" class="inner-post-page">
+
+  <div class="block-left">
+    <div class="content">
+
+      {% include left.html%}
+
+      <div class="post-title-section">
+        <div class="post-title-section">
+          <div class="section-line">{ paget.title } <em>/</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block-right">
+      <div class="share-buttons">
+        {% include share.html %}
+      </div>
+
+      {% include links.html %}
+      
+      <div class="inner-post content">
+        <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
+        {{ content }}
+        <br>
+        {% include share.html %}
+        {% include page-pagination.html %}
+      </div>
+    </div>
+    {% include scripts.html %}
+    {% include overlay.html %}
+</body>
+
+</html>
