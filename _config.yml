@@ -1,96 +1,65 @@
-# main text of home
-name: gmaslowski.com
-bio: on software development
-
-# twitter summary info
+# Site
+title: gmaslowski.com
 description: on software development
+url: http://localhost:4000
+logo: images/profile.jpg
+locale: en_US
 
-# if it's an external image, update below for true
-# better with square images
-external-image: false
-picture: assets/images/profile.jpg
+# Left Block Images
+background:
+  homepage: images/akka-1.jpg                           # this image will be shown on homepage's left block
+  post-list: images/akka-1.jpg             # this image will be shown on post list page
+  default-post: images/akka-1.jpg   # this image will be shown when post's front matter doesn't specify any image
 
-# If you want to include your resume, set to true
-# and specify source (external or local).
-resume: false
-resume-external: true
-resume-url: https://google.com/?q=my+resume
+# Jekyll
+permalink:          /:title/
+markdown:           kramdown
+highlighter:        rouge
+kramdown:
+  auto_ids:         true
+  footnote_nr:      1
+  entity_output:    as_char
+  toc_levels:       1..6
+  enable_coderay:   false
+sass:
+  sass_dir:         assets/_sass
+  style:            compressed
 
-url: https://gmaslowski.com
-# your url: http://USERNAME.github.io
+# Google Analytics
+google-analytics: UA-131478104-1
 
-permalink: /:title/
+# Social Links
+#email:             email
+#google.plus:        username
+twitter:            gmaslowski
+#facebook:           username
+github:             gregmaslowski
+stackoverflow:     2392469/gmaslowski
+#linkedin:          username
+#xing:              username
+#instagram:          username
+#lastfm:            username
+#tumblr:            username
+#pinterest:         username
+#foursquare:        username
+#steam:              username
+#dribbble:          username
+#youtube:           username
+#soundcloud:        username
+#weibo:             username
+#flickr:            username
+#codepen:           username
+#keybase:           username
+#xmpp:              username@server.com
+#hackernews:        username
+#behance:           username
 
-# To enable google analytics, supply your token below
-analytics-google: 'UA-131478104-1'
-
-# To enable piwik tracking, supply your url & site ID below
-# analytics-piwik-url: 'piwik.my-host.com'
-# analytics-piwik-id: 1
-
-# if you don't want comments in your posts, leave categories empty
-disqus:
-  shortname: gmaslowski # enter this from your disqus account
-  categories: [blog, project] # only show disqus for posts that have these categories
-
-# if you don't have any of social below, comment the line
-#facebook: myfacebook
-twitter: gregmaslowski
-# google: mygoogle
-# instagram: myinstagram
-# pinterest: mypinterest
-linkedin: gmaslowski
-# youtube: myyoutube
-# spotify: myspotify
-github: gmaslowski
-# lastfm: mylastfm
-stackoverflow: 2392469/gmaslowski
-# quora: userquora
-# reddit: username
-# medium: medium
-# vimeo: myvimeo
-# lanyrd: mylanyrd
-email: gregmaslowski@gmail.com
-
-# do you want a larger site? change the option below
-# options: [normal, large] | default: normal
-# normal = 560px / large = 810px
-width: large
-
-# if you don't need pagination, comment the *paginate* configs below
-# paginate: 5
-# paginate_path: "blog/:num/"
-
-# if you don't need projects, comment the *projects* configs below
-projects: true
-
-# if you don't need "about" or "blog", comment them out below
-about: true
-blog: true
-
-# do you want to show the "read time" of the posts?
-read-time: true
-
-# do you want to show the "tags" inside the posts?
-show-tags: true
-
-# related posts inside a post?
-related: true
-
-# Display links for next and previous posts for the specified categories
-post-advance-links: [blog]
-
-# show author block at the end of a post ?
-show-author: false
-
-# do you want some animations?
-animation: true
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-gist
+# Gems
+gems:
   - jekyll-feed
-  - jemoji
+  - jekyll-sitemap
+  - jekyll-gist
 
-jekyll-mentions:
-    base_url: https://github.com
+# Exclude list
+include: [_pages]
+exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile, .sass-cache, .DS_Store]
