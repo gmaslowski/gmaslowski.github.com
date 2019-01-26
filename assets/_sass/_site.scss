@@ -45,27 +45,32 @@
 }
 
 .post-links {
-  position: absolute;
-  top: 20px;
+  margin-top: 40px;
   font-size: 20px;
-  color: darken($white, 40);
+  color: $green;
   font-weight: bolder;
+  .posts-link {
+    position: relative;
+    font-size: 20px;
+    color: darken($white, 20);
+  }
   a:hover {
     color: #399f62;
     border-bottom: 1px dotted $green;
   }
+  em {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
 
-.posts-link {
-  position: relative;
-  top: 73px;
-  font-size: 20px;
-  color: darken($white, 40);
+.about-image {
+  border-bottom: 1px solid #6c6c6c;
+  width: 300px;
+  height: auto;
+  max-width: 300px;
 }
 
-.posts-link {
-  right: 90px;
-}
 
 .overlay {
   position: fixed;
