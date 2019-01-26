@@ -2,6 +2,7 @@
 title: gmaslowski.com
 description: on software development
 url: https://gmaslowski.com
+# url: http://localhost:4000
 logo: images/profile.jpg
 locale: en_US
 
@@ -31,11 +32,11 @@ google-analytics: UA-131478104-1
 # Social Links
 #email:             email
 #google.plus:        username
-twitter:            gmaslowski
+twitter:            gregmaslowski
 #facebook:           username
-github:             gregmaslowski
+github:             gmaslowski
 stackoverflow:     2392469/gmaslowski
-#linkedin:          username
+linkedin:          gmaslowski
 #xing:              username
 #instagram:          username
 #lastfm:            username
