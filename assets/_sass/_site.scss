@@ -74,6 +74,11 @@
   }  
 }
 
+#disqus_thread {
+  border-top: 1px solid $gray;
+  margin-top: 50px;
+}
+
 .logo {
   max-width: 150px;
   display: inline-block;
