@@ -7,7 +7,7 @@ category: blog
 tag:
 - github
 - travis
-- continouos integration
+- continuous integration
 - docker
 comments: true
 ---

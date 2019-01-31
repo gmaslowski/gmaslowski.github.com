@@ -7,6 +7,7 @@ category: blog
 tag:
 - jee
 - spring
+- ejb
 description: written for Future Processing technical blog
 ---
 
