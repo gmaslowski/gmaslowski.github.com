@@ -8,6 +8,8 @@ tag:
 - conference
 - akka
 - programming
+- architecture
+- lagom
 author: gregmaslowski
 category: blog
 comments: true

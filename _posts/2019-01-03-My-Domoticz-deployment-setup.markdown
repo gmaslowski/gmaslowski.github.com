@@ -12,7 +12,6 @@ tag:
 - docker
 - ansible
 - raspberrypi
-- rpi
 comments: true
 ---
 

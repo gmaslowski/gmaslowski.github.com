@@ -5,6 +5,8 @@ title: Drawing simple diagrams with yUml
 date: 2015-09-08
 category: blog
 description: yUml - free online diagram generator
+tag:
+- architecture
 ---
 
 Lately I was starting yet another project for learning/fun purposes. Since recently I'm a big fan of 

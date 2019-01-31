@@ -5,6 +5,10 @@ date: 2016-02-26
 description: Implementing simple Gradle plugin supporting property passing to test execution.
 category: blog
 comments: true
+tag:
+- gradle
+- groovy
+- testing
 ---
 
 Recently, in my current project we have stumbled upon an issue with [Gradle](http://gradle.org/). To give some context, 
