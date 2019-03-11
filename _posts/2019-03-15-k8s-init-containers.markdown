@@ -14,7 +14,7 @@ comments: true
 image: assets/containers.jpg
 ---
 
-Some time ago, I wrote about my current project, and how did we tackled the issue of passing node labels to pods in [Kubernetes](https://kubernetes.io) context. The solution worked (and still does), but there was a caveat to it, which I'd like to share in this short article.
+Some time ago, I wrote about my current project, and how did we tackle the issue of passing node labels to pods in [Kubernetes](https://kubernetes.io) context. The solution worked (and still does), but there was a caveat to it, which I'd like to share in this short article.
 
 ## Brief introduction to the problem
 
@@ -25,7 +25,7 @@ But, what's worth mentioning for this story, is that the *init container* was ab
 cp /cassandra/cassandra-rackdc.properties /shared/cassandra-rackdc.properties && 
 sed -i.bak s/RACK/$(kubectl get no -Lvm/rack | grep ${NODE_NAME} | awk '{print $6}')/g /shared/cassandra-rackdc.properties
 {% endhighlight %}
-a template (coming from a `configMap` volume) was filled and copied to a *shared* volume, which then was used by the app containers. Everything was fine and working, because of the promises which are brought by [*init containers*](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#understanding-init-containers):
+a template (coming from a `configMap` volume) was filled and copied to a *shared* volume, which then was used by the app containers. Everything was fine and working, because of the [*promises*](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#understanding-init-containers) which are brought by init containers:
 
 - started before app containers are
 - always run to completion
@@ -59,20 +59,17 @@ Further investigation revealed the following:
 - the `volume mount` on init container side contains  **proper** `rack` value in cassandra config file
 - the mounted file into app container (via `subpath`) contains **wrong** `rack` value in cassandra config file
 
-{% comment %}
-this requires some comment, as we run a [Stacked High Available Kubeadm Cluster](https://kubernetes.io/docs/setup/independent/high-availability/) with 3 masters and external LB to route traffic to the api-servers:
-![Stacked Topology with etcd]({{ site.url }}/assets/k8s-topology-stackeg.jpg)
-And thus, making the `kubectl` command call slower. 
-{% endcomment %}
+> this requires some comment, as we run a [Stacked High Available Kubeadm Cluster](https://kubernetes.io/docs/setup/independent/high-availability/) with 3 masters and external LB to route traffic to the api-servers:
+![Stacked Topology with etcd]({{ site.url }}/assets/k8s-topology-stackeg.jpg) And thus, making the `kubectl` command call slower. 
 
 And now, bummer. How can all of it be? Why the init container is being (re)started? Where do the inconsistencies between volume mount inside the init container and app container come from? 
 
 ## Quick? go through the documentation
 
 So let us review documentation, to gather more information. From [https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#detailed-behavior](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/#detailed-behavior)
-{% comment %}
-Because Init Containers can be restarted, retried, or re-executed, Init Container code should be idempotent. In particular, code that writes to files on EmptyDirs should be prepared for the possibility that an output file already exists.
-{% endcomment %}
+
+> Because Init Containers can be restarted, retried, or re-executed, Init Container code should be idempotent. In particular, code that writes to files on EmptyDirs should be prepared for the possibility that an output file already exists.
+
 Ok, that doesn't explain a lot, but at least shows a direction. Our script is not idempotent at all! There's a time interval - a ~5 seconds one - during which the value is the *to-be-substituted*  one. Remember the script?
 
 {% highlight yaml %}
