@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kubernetes: Init container promises
-date: 2019-03-15
+date: 2019-03-11
 description: What is really promised as it comes to Kubernetes Init Containers?
 category: blog
 tag:
@@ -21,7 +21,7 @@ Some time ago, I wrote about my current project, and how did we tackled the issu
 In this article [https://gmaslowski.com/kubernetes-node-label-to-pod/](https://gmaslowski.com/kubernetes-node-label-to-pod/) I described how we've passed k8s node labels to the deployed pods. Not to repeat myself, I used [Init Containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/) with a volume mount shared between the init and app container. If you'd like to get more details about it, I advise you to read the aforementioned article.
 
 But, what's worth mentioning for this story, is that the *init container* was able to control our k8s cluster (to obtain node label) and with this script:
-{ %highlight yaml %}
+{% highlight yaml %}
 cp /cassandra/cassandra-rackdc.properties /shared/cassandra-rackdc.properties && 
 sed -i.bak s/RACK/$(kubectl get no -Lvm/rack | grep ${NODE_NAME} | awk '{print $6}')/g /shared/cassandra-rackdc.properties
 {% endhighlight %}
@@ -34,12 +34,12 @@ a template (coming from a `configMap` volume) was filled and copied to a *shared
 ### Symptoms
 
 So far, so good. With this configuration and the promises in mind, our setup was expected to always have a */etc/cassandra/cassandra-rackdc.properties* file with the following content:
-{ %highlight yaml %}
+{% highlight yaml %}
 dc=customDataCenter
 rack=customServer-<X>
 {% endhighlight %}
 coming from a template defined like this:
-{ %highlight yaml %}
+{% highlight yaml %}
 dc=customDataCenter
 rack=RACK
 {% endhighlight %}
@@ -75,7 +75,7 @@ Because Init Containers can be restarted, retried, or re-executed, Init Containe
 {% endcomment %}
 Ok, that doesn't explain a lot, but at least shows a direction. Our script is not idempotent at all! There's a time interval - a ~5 seconds one - during which the value is the *to-be-substituted*  one. Remember the script?
 
-{ %highlight yaml %}
+{% highlight yaml %}
 cp /cassandra/cassandra-rackdc.properties /shared/cassandra-rackdc.properties && 
 sed -i.bak s/RACK/$(kubectl get no -Lvm/rack | grep ${NODE_NAME} | awk '{print $6}')/g /shared/cassandra-rackdc.properties
 {% endhighlight %}
@@ -85,7 +85,7 @@ First we copy, than we substitute. Apparently, after the template file was copie
 ## A really simple solution 
 
 So.. turns out that the solution, to the couple-mindfuck-hours-long issue  might be really simple. Changed the script to the following:
-{ %highlight yaml %}
+{% highlight yaml %}
 test -f /shared/cassandra-rackdc.properties && \
            echo 'File exists. Not overwriting.' || 
            (cp /cassandra/cassandra-rackdc.properties /shared/cassandra-rackdc.properties && \
