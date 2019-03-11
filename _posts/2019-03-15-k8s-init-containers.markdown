@@ -60,7 +60,7 @@ Further investigation revealed the following:
 - the mounted file into app container (via `subpath`) contains **wrong** `rack` value in cassandra config file
 
 > this requires some comment, as we run a [Stacked High Available Kubeadm Cluster](https://kubernetes.io/docs/setup/independent/high-availability/) with 3 masters and external LB to route traffic to the api-servers:
-![Stacked Topology with etcd]({{ site.url }}/assets/k8s-topology-stackeg.jpg) And thus, making the `kubectl` command call slower. 
+![Stacked Topology with etcd]({{ site.url }}/assets/k8s-topology-stacked.jpg) And thus, making the `kubectl` command call slower. 
 
 And now, bummer. How can all of it be? Why the init container is being (re)started? Where do the inconsistencies between volume mount inside the init container and app container come from? 
 
