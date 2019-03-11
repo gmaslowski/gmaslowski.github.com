@@ -38,7 +38,7 @@ So far, so good. With this configuration and the promises in mind, our setup was
 dc=customDataCenter
 rack=customServer-<X>
 {% endhighlight %}
-coming from a template defined like this:
+built upon defined template of following form:
 {% highlight yaml %}
 dc=customDataCenter
 rack=RACK
@@ -48,7 +48,7 @@ rack=RACK
 
 ### Cause
 
-We quickly found out, that the node with the failing cassandra pod had udergone some maintenance work, including [Docker](https://docker.io) upgrade, which forced a docker daemon  restart. Bum. Got you. Deletion of the failing pod solved the issue (by recreating it). Tried restarting docker deamon on another node with cassandra - same issue. At least we're able to recreate it :). 
+We quickly found out, that the node with the failing cassandra pod had udergone some maintenance work, including [Docker](https://docker.io) upgrade, which forced a docker daemon  restart. Bum. Got you. Deletion of the failing pod solved the issue (by recreating it). Tried restarting docker deamon on another node with cassandra - same issue. At least we're able to recreate the problem ;). 
 
 ### We need to go deeper (we always do... always)
 
