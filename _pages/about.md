@@ -18,3 +18,6 @@ image: images/profile.jpg
 <br/>
 But hey... being a geek with attraction to <b>Go</b>, bleeding egde technologies and <b>ESP8266</b> isn't a crime. Guilty of that as well ;)
 </p>
+<p>
+Privately a husband, father and <b>F1</b> fan trying to match others in <b>F1 2018</b>, <b>Asseto Corsa</b> and <b>Project Cars</b>.
+</p>
