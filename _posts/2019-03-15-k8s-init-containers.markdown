@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kubernetes Init Containers promises
+title: "Kubernetes: Init Containers promises"
 date: 2019-03-11
 description: What is really promised as it comes to Kubernetes Init Containers?
 category: blog
