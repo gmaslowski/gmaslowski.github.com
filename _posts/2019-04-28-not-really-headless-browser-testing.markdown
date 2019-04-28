@@ -26,11 +26,11 @@ The approach I'm describing is nor new nor really innovative. I think that I was
 
 ## xvfb to the rescue
 
-After quick research, I've found a solution to use headless option to run UI tests. Unfortunately, the team was bound to a Firefox verison which did not have a headless option yet. Turned out that another approach was to use [xvfb](https://en.wikipedia.org/wiki/Xvfb). If I recall correctly I was following this blog article [http://elementalselenium.com/tips/38-headless](http://elementalselenium.com/tips/38-headless) in order to get the tests running. With `xvfb` at disposal, the UI testing job could still run a browser within a X session, but without the need to actually display it. Furthermore, I already understood that I can containerize `xvfb` to leverage the [gitlab runner docker executor](https://docs.gitlab.com/runner/executors/docker.html), which spawns docker containers for every executed job. Well, that's great sounds like job done. 
+After quick research, I've found a solution to use headless option to run UI tests. Unfortunately, the team was bound to a Firefox version which did not have a headless option yet. Turned out that another approach was to use [xvfb](https://en.wikipedia.org/wiki/Xvfb). If I recall correctly I was following this blog article [http://elementalselenium.com/tips/38-headless](http://elementalselenium.com/tips/38-headless) in order to get the tests running. With `xvfb` at disposal, the UI testing job could still run a browser within a X session, but without the need to actually display it. Furthermore, I already understood that I can containerize `xvfb` to leverage the [gitlab runner docker executor](https://docs.gitlab.com/runner/executors/docker.html), which spawns docker containers for every executed job. Well, that's great sounds like job done. 
 
 ## Applied solution
 
-Unfortunately I don't have the source code I created two years ago, to show the real solution. That's why I decided (for the sake of completeness of this post) to fork the [Selenide](https://selenide.org/) project (which has UI tests inside) and show how one could run *'headless'* tests as I configured them. But before showing the code, let me repeat that the automated framework was bound to Firefox version 63.0.3. For this version the real *headless* option was not available yet - which forced me to create the image in the first place. Additionally, to show how to use headless browsers options I've added those options to the code as well.   
+Unfortunately I don't have the source code I created two years ago, to show the real solution. That's why I decided (for the sake of completeness of this post) to fork the [Selenide](https://selenide.org/) project (which has UI tests inside) and show how one could run *'headless'* tests as I configured them. But before showing the code, let me repeat that the automated framework was bound to Firefox version 63.0.3. For this version the real *headless* option was not available yet - which forced me to create the image in the first place. Additionally, to show how to use headless browsers I've added those options to the project as well.   
 
 `.gitlab-ci.yml`:
 
@@ -72,9 +72,9 @@ In this snippet I've run the tests in three different base images, with differen
 - using a [Selenium Standalome Chrome](https://github.com/SeleniumHQ/docker-selenium/tree/master/StandaloneChrome) (with JDK addition)
 - using a [Selenium Standalome Firefox](https://github.com/SeleniumHQ/docker-selenium/tree/master/StandaloneFirefox) (with JDK addition)
 
-> For the presentation purposes I needed to built the images by myself, as Selenide is using *Gradle* as the tests runner, which in turn needed at least a JDK version available. The presented source code and image description can be found at [https://gitlab.com/gmaslowski-blog/headless-docker](https://gitlab.com/gmaslowski-blog/headless-docker)
+> For the presentation purposes I needed to built the `standalone-firefox:latest` and `standalone-chrome:latest` images myself, as Selenide is using *Gradle* as the tests runner, which in turn needed at least a JDK available. The presented image description can be found at [https://gitlab.com/gmaslowski-blog/headless-docker/images](https://gitlab.com/gmaslowski-blog/headless-docker/images)
 
-The **xvfb-firefox** *Dockerfile* is only installing `xvfb` and Firefox in the specified version. To make firefox in this version work, I needed to install aditional libraries and the gecko driver.
+> The **xvfb-firefox** is an image with `xvfb` and Firefox in the specified version. To make firefox in this version work, I needed to install aditional libraries and the gecko driver.
 
 What's visible inside the `.gitlab-ci.yml` file is that there's a stage in which 3 set of tests is being executed, all with different options:
 
@@ -82,7 +82,7 @@ What's visible inside the `.gitlab-ci.yml` file is that there's a stage in which
 - headless chrome
 - xvfb firefox
 
-That can also be seen in the pipeline [https://gitlab.com/gmaslowski-blog/headless-docker/selenide/pipelines/58815400](https://gitlab.com/gmaslowski-blog/headless-docker/selenide/pipelines/58815400). You can see that the Firefox and Chrome Headless options are failing. I did not focus too much, as the failures appear **only for 2 of 474 tests**. For the sake of this post I did not investigae. Let's focus on the `xvfb` based approach. With wrapping our command into `xvfb-run -a <command>` we actuall run a in memory X display, which then in turn will have firefox opened. Quite interesting, right? :) Hence, our tests can run inside a container. 
+That can also be seen in the pipeline [https://gitlab.com/gmaslowski-blog/headless-docker/selenide/pipelines/58815400](https://gitlab.com/gmaslowski-blog/headless-docker/selenide/pipelines/58815400). You can see that the Firefox and Chrome Headless tests are failing. I did not focus too much on them, as the failures appear **only for 2 of 474 tests**. For the sake of this post I did not investigate. Coming back the `xvfb` based approach, with wrapping our command into `xvfb-run -a <command>` we actuall run an in memory X display, which then in turn will have firefox opened. Quite interesting, right? :) Hence, our tests can run inside a container. 
 
 As as side note, any created artifact by the tests (like screenshot with a failure) could be stored inside Gitlab using the [Job Artifacts](https://docs.gitlab.com/ee/user/project/pipelines/job_artifacts.html) feature. Though I haven't shown that in my example it is pretty straight forward to use. Same for the test reports.
 
@@ -98,11 +98,11 @@ Starting from 59 version of Chrome, it offers a *headless* functionality, which 
 
 Instead of building own image whith the browser that's needed, one could go for an already predefined image from [Selenium](https://www.seleniumhq.org/) as I've shown for the **not-xvfb** options.
 
-As normal approach to configure [Selenium Grid](https://www.seleniumhq.org/projects/grid/), would eventually end up in lots of maintenance of the hub and nodes, so there's an easier version of it. Just dockerize Selenium Grid and endjoy the possibility to have it configured and deployed. In this article [http://www.testautomationguru.com/selenium-grid-setup-using-docker/](http://www.testautomationguru.com/selenium-grid-setup-using-docker/) the author shows how to setup dockerized Selenium Grid with minimal effort. What's more, one could use docker swarm or kubernetes as the orchestration platform for Selenium Grid. One thing I haven't really thought through as it comes to this approach is multi OS configuration - I think that shouldn't be impossible on one hand knowning all the tools. On the other hand I think that a **xvfb-based-headless** approach for older browsers might be impossible to achieve on a Windows container.
+Maintaining [Selenium Grid](https://www.seleniumhq.org/projects/grid/) would eventually end up in lots of work around the hub and the nodes, so there's an easier solution to that. Just dockerize Selenium Grid and endjoy the possibility to have it configured and deployed anywhere you like. In this article [http://www.testautomationguru.com/selenium-grid-setup-using-docker/](http://www.testautomationguru.com/selenium-grid-setup-using-docker/) the author shows how to setup dockerized Selenium Grid with minimal effort. What's more, one could use Docker Swarm or Kubernetes as the orchestration platform for Selenium Grid. One thing I haven't really thought through as it comes to this approach is multi OS configuration - I think that shouldn't be impossible on one hand knowning all the tools. On the other hand I think that a **xvfb-based-headless** approach for older browsers might be impossible to achieve on a Windows container.
 
 ### Cloud solutions
 
-If, in your company, you have the freedom to choose cloud based solutions (believe me that still in 2019 some companies restrain from it), there are some options for you, like:
+If in your company you're lucky enough to have the freedom to choose cloud based solutions (believe me that still in 2019 some companies restrain from it), there are some options for you, like:
 
 - [https://www.gridlastic.com/](https://www.gridlastic.com/)
 - [https://testingbot.com/](https://testingbot.com/)
