@@ -74,7 +74,7 @@ In this snippet I've run the tests in three different base images, with differen
 
 > For the presentation purposes I needed to built the `standalone-firefox:latest` and `standalone-chrome:latest` images myself, as Selenide is using *Gradle* as the tests runner, which in turn needed at least a JDK available. The presented image description can be found at [https://gitlab.com/gmaslowski-blog/headless-docker/images](https://gitlab.com/gmaslowski-blog/headless-docker/images)
 
-> The **xvfb-firefox** is an image with `xvfb` and Firefox in the specified version. To make firefox in this version work, I needed to install aditional libraries and the gecko driver.
+> The `xvfb-firefox:latest` is an image with `xvfb` and Firefox in the specified version. To make firefox in this version work, I needed to install aditional libraries and the gecko driver.
 
 What's visible inside the `.gitlab-ci.yml` file is that there's a stage in which 3 set of tests is being executed, all with different options:
 
