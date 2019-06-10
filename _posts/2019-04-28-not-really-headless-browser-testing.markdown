@@ -12,6 +12,7 @@ tag:
 - testing
 - ui
 - continuous integration
+- software
 comments: true
 image: assets/headless.png
 ---

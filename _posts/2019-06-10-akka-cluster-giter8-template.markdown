@@ -9,6 +9,8 @@ tag:
 - giter8
 - akka cluster
 - prototyping
+- architecture
+- software
 comments: true
 image: https://asciinema.org/a/250761.svg
 ---
