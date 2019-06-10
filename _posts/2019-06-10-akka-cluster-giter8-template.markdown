@@ -10,6 +10,7 @@ tag:
 - akka cluster
 - prototyping
 comments: true
+image: https://asciinema.org/a/250761.svg
 ---
 
 Couple of times already I've found myself in a situation that I wanted to prototype something based on Akka Cluster. In order to do that I was almost always reviewing the [Akka Cluster Usage Sample](https://doc.akka.io/docs/akka/2.5.5/scala/cluster-usage.html#a-simple-cluster-example) and downloading the sample, or have used one of my already created examples. The problem with that approach is that all of the samples already have code and configuration in it. Mostly, with new prototypes, I don't need package names, configurations and snippets of code remaning from other prototypes..
