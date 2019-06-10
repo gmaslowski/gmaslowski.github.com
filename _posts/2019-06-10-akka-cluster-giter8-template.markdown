@@ -292,7 +292,7 @@ sbt new gmaslowski/akka-cluster.g8
 
 Since a picture is worth more, than tousands of words:
 
-<script src="https://asciinema.org/a/250761.js" id="asciicast-250761" async data-autoplay="true" data-size="medium" data-speed="2.5" data-theme="solarized-dark"></script>
+<script src="https://asciinema.org/a/250761.js" id="asciicast-250761" async data-autoplay="false" data-size="medium" data-speed="2.5" data-theme="solarized-dark"></script>
 
 ## Enhancements
 
