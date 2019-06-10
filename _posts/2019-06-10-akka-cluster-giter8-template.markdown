@@ -12,7 +12,7 @@ tag:
 comments: true
 ---
 
-Couple of times already I've found myself in a situation that I wanted to prototype something based on Akka Cluster. And than I was just reviewing the [Akka Cluster Usage Sample](https://doc.akka.io/docs/akka/2.5.5/scala/cluster-usage.html#a-simple-cluster-example) and downloading the sample, or have used one of my already used examples. The problem with that approach was that all of them already had code and configuration in it, which I didn't need, package names set and things like that.
+Couple of times already I've found myself in a situation that I wanted to prototype something based on Akka Cluster. In order to do that I was almost always reviewing the [Akka Cluster Usage Sample](https://doc.akka.io/docs/akka/2.5.5/scala/cluster-usage.html#a-simple-cluster-example) and downloading the sample, or have used one of my already created examples. The problem with that approach is that all of the samples already have code and configuration in it. Mostly, with new prototypes, I don't need package names, configurations and snippets of code remaning from other prototypes..
 
 So this time, when I wanted to prototype an actor based PubSub dispatching mechanism on Akka Cluster, I decided to finally extract a template for that, so it doesn't take half an hour to get a cluster running locally.
 
@@ -84,7 +84,7 @@ akka {
 
 ### Starting the cluster locally
 
-Starting multiple actor systems locally, that form a cluster is also trivial, I think it's also shown somewhere in the Akka Cluster Example. How it's basically achieved? Well, in on JVM (one `main` method) multiple akka nodes are being started, which join the cluster, having the same configuration pointing to local seed nodes. The main parts:
+Starting multiple actor systems locally, that form a cluster is also trivial (it's also shown somewhere in the Akka Cluster Example). How it's basically achieved? Well, in one JVM (one `main` method) multiple akka nodes are being started, which join the cluster (due to the shared configuration, pointing to local seed nodes). The imported main parts of such project:
 
 ---
 
@@ -190,7 +190,7 @@ And that was all there is to the simple Akka Cluster App. Now it needs to be mad
 
 ## Gitering the solution
 
-Actually the documentation on available at [http://www.foundweekends.org/giter8/template.html](http://www.foundweekends.org/giter8/template.html) describes quite well, how such template are supposed to be created. In this case I'll just limit myself to show the g8 project structure and list some gotchas I've came across.
+The documentation available at [http://www.foundweekends.org/giter8/template.html](http://www.foundweekends.org/giter8/template.html) describes quite well, how such templates are supposed to be created. In this case I'll just limit myself to show the g8 project structure and list some gotchas I've came across.
 
 ---
 
@@ -207,7 +207,7 @@ classname=$name;format="Camel"$
 verbatim = *.xml
 {% endhighlight %}
 
-This file will be used, as configuration, by Giter8 during the scaffold/generation process. The variables are being then used for actual substitution in the project template.
+This file will be used, as configuration, by Giter8 during the scaffold/generation process. The variables are being then used for substitution in the project template.
 
 ---
 
@@ -244,8 +244,8 @@ rock-solid λ ~/devenv/private/akka-cluster.g8/ master
 
 - all of template project files, by convention, should be placed either into `src/main/g8` or `./` directory. 
 - the `default.properties` files contains variables which will be substituted during project scaffolding/generation; 
- - `$package$` - will be expanded into directories defined by the package name
- - `$classname$` - name of classes, coming directly from the project name - that is sufficient for the fast prototyping needs
+  - `$package$` - will be expanded into directories defined by the package name
+  - `$classname$` - name of classes, coming directly from the project name - that is sufficient for the fast prototyping needs
 - inside `default.properties` file default values are residing, so that it's not needed to provide them at all
 
 ---
@@ -292,7 +292,7 @@ sbt new gmaslowski/akka-cluster.g8
 
 Since a picture is worth more, than tousands of words:
 
-<script src="https://asciinema.org/a/14.js" id="asciicast-14" async data-autoplay="true" data-size="medium" data-speed="2.5" data-theme="solarized-dark"></script>
+<script src="https://asciinema.org/a/250761.js" id="asciicast-250761" async data-autoplay="true" data-size="medium" data-speed="2.5" data-theme="solarized-dark"></script>
 
 ## Enhancements
 
@@ -308,4 +308,5 @@ I already have some ideas of what I could change and benefit from it:
 - [Giter8](http://www.foundweekends.org/giter8/template.html)
 - [Akka Cluster Usage](https://doc.akka.io/docs/akka/2.5.12/cluster-usage.html?language=scala)
 - [https://github.com/gmaslowski/akka-cluster.g8](https://github.com/gmaslowski/akka-cluster.g8)
+- [https://asciinema.org/a/250761?speed=2.5&theme=solarized-dark&size=medium](https://asciinema.org/a/250761?speed=2.5&theme=solarized-dark&size=medium)
 - [Asciinema](https://asciinema.org/)
