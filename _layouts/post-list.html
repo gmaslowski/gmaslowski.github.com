@@ -27,7 +27,12 @@ layout: compress
             <a href="{{ site.url }}{{ post.url }}" class="post-title">
               <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
             </a>
-            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
+            <span class="date">
+              <span class="date-day"><sup>{{ post.date | date: '%d' }}</sup></span>
+              <span class="date-separator">/</span>
+              <span class="date-month">{{ post.date | date: '%b' }}</span> <span
+                class="date-year">{{ post.date | date: '%Y' }}</span>
+            </span>
           </h2>
           <p>{{ post.description }}</p>
           <ul class="tags">
