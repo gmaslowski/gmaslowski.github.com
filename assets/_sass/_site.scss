@@ -304,7 +304,22 @@
       display: inline-block;
       font-size: 15px;
       padding-top: 10px;
-      text-transform: uppercase;
+      .date-day {
+        font-weight: bold;
+        font-size: 19px;
+        margin-right: -0.2rem;
+      }
+      .date-separator {
+        letter-spacing: -0.35rem;
+        font-size: 1.9rem;
+        color: #358052;
+      }
+      .date-month {
+        font-weight: bold;
+      }
+      .date-year {
+        font-weight: bold;
+      }
     }
     .post-title {
       display: inline-block;
@@ -492,6 +507,18 @@
     background: #eaeaea;
     margin-left: 10px;
   }
+  .date-day {
+    font-weight: bold;
+  }
+  .date-separator {
+    color: #6b6b6b;
+  }
+  .date-month {
+    font-weight: bold;
+  }
+  .date-year {
+    font-weight: bold;
+  }
 }
 
 .footer-line {
@@ -552,6 +579,22 @@
         display: block;
         width: 100%;
         padding-bottom: 10px;
+        .date-day {
+          font-weight: bold;
+          font-size: 19px;
+          margin-right: -0.2rem;
+        }
+        .date-separator {
+          letter-spacing: -0.35rem;
+          font-size: 1.9rem;
+          color: #358052;
+        }
+        .date-month {
+          font-weight: bold;
+        }
+        .date-year {
+          font-weight: bold;
+        }
       }
     }
   }
