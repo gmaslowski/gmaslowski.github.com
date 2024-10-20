@@ -11,23 +11,18 @@ image: images/profile.jpg
 
 <br/>
 <br/>
-<p>
-<b>
-    
-🚀 **CTO at Saga Tenix AS** | From *Developer* to *Architect* to **CTO**—Driving Electrification and Innovation 🌱
-
-My journey began as a **Java Software Developer**, evolving through roles as a **Software Architect**, and now as **CTO**. Along the way, I’ve mastered *JVM languages* like **Java**, **Scala**, **Groovy**, and **Kotlin**, while expanding my skills in **JavaScript** and **C#**. Throughout it all, I’ve remained passionate about cutting-edge technology—especially in the realm of **EV electrification** and **sustainable tech**.
-
-Today, I lead the charge (literally) in the **electrification of fleet management** at **Saga Tenix**, developing innovative solutions for **charging infrastructure** and **sustainable transportation**. My focus is on harnessing the power of **EV technology** to revolutionize fleet operations, ensuring they’re cleaner, smarter, and more efficient.
-
-As **CTO**, I manage the **IT Software Development team**, oversee **technology operations**, and align **IT strategies** with **business goals**. I'm responsible for **IT budget management**, **infrastructure development**, and **system implementation**, always keeping an eye on performance and continuous improvement. I believe in growing teams that deliver high-impact, sustainable tech solutions—whether it’s through *cloud technologies* (**AWS**, **Azure**), orchestrating with **Docker/Kubernetes**, or driving innovation in **EV tech**.
-
-Of course, my geeky side still thrives with **Go**, *bleeding-edge tech*, and **ESP8266** projects, keeping me sharp. When not in the office, I’m a *sim racing enthusiast* and **F1** fan, pushing limits on the virtual track just like I do in the world of **EV innovation**.
-
-<br/>
-<br/>
-But hey... being a geek with attraction to <b>Go</b>, bleeding egde technologies and <b>ESP8266</b> isn't a crime. Guilty of that as well ;)
+<p>    
+🚀 <strong>CTO at Saga Tenix AS</strong> | From <em>Developer</em> to <em>Architect</em> to <strong>CTO</strong>—Driving Electrification and Innovation 🌱
 </p>
 <p>
-Privately a husband, father and <b>F1</b> fan trying to match others in <b>F1 2018</b>, <b>Asseto Corsa</b> and <b>Project Cars</b>.
+My journey began as a <strong>Java Software Developer</strong>, evolving through roles as a <strong>Software Architect</strong>, and now as <strong>CTO</strong>. Along the way, I’ve mastered <em>JVM languages</em> like <strong>Java</strong>, <strong>Scala</strong>, <strong>Groovy</strong>, and <strong>Kotlin</strong>, while expanding my skills in <strong>JavaScript</strong> and <strong>C#</strong>. Throughout it all, I’ve remained passionate about cutting-edge technology—especially in the realm of <strong>EV electrification</strong> and <strong>sustainable tech</strong>.
+</p>
+<p>
+Today, I lead the charge (literally) in the <strong>electrification of fleet management</strong> at <strong>Saga Tenix</strong>, developing innovative solutions for <strong>charging infrastructure</strong> and <strong>sustainable transportation</strong>. My focus is on harnessing the power of <strong>EV technology</strong> to revolutionize fleet operations, ensuring they’re cleaner, smarter, and more efficient.
+</p>
+<p>
+As <strong>CTO</strong>, I manage the <strong>IT Software Development team</strong>, oversee <strong>technology operations</strong>, and align <strong>IT strategies</strong> with <strong>business goals</strong>. I'm responsible for <strong>IT budget management</strong>, <strong>infrastructure development</strong>, and <strong>system implementation</strong>, always keeping an eye on performance and continuous improvement. I believe in growing teams that deliver high-impact, sustainable tech solutions—whether it’s through <em>cloud technologies</em> (<strong>AWS</strong>, <strong>Azure</strong>), orchestrating with <strong>Docker/Kubernetes</strong>, or driving innovation in <strong>EV tech</strong>.
+</p>
+<p>
+Of course, my geeky side still thrives with <strong>Go</strong>, <em>bleeding-edge tech</em>, and <strong>ESP8266</strong> projects, keeping me sharp. When not in the office, I’m a <em>sim racing enthusiast</em> and <strong>F1</strong> fan, pushing limits on the virtual track just like I do in the world of <strong>EV innovation</strong>.
 </p>
