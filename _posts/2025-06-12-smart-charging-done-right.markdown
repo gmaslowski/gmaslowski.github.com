@@ -13,7 +13,7 @@ comments: true
 image: assets/smart-charging-cost-optimized.png
 ---
 
-This post was originally written as an article for Tenix https://tenix.eu .
+This post was originally written as an article for Tenix https://tenix.eu/news/tenix-smart-charging/ .
 
 # Smart Charging, Done Right - How We Designed the Brains Behind Tenix Charging
 
@@ -67,7 +67,7 @@ Unlike traditional load balancing that operates inside a single charger, Tenix s
 - Maximizes throughput without micromanagement
 - Avoids inefficient static configurations of power output, dictated by high utilization periods
 
-![Smart Charging - Load Balancing]({{ site.url }}/assets/smart-charging-load-balancing.png)
+![Smart Charging - Load Balancing]({{ site.url }}/assets/smart-charging-load-balancing.png){width=100}
 
 ### 2. **Time-Constrained**
 
@@ -89,7 +89,7 @@ When departure time is the priority, this mode makes sure vehicles are charged a
 - Designed for peace of mind in time-critical scenarios
 
 
-![Smart Charging - Time Constrained]({{ site.url }}/assets/smart-charging-time-constrained.png)
+![Smart Charging - Time Constrained]({{ site.url }}/assets/smart-charging-time-constrained.png){width=100}
 
 ### 3. **Cost-Optimized**
 
@@ -111,7 +111,7 @@ This mode minimizes energy costs without compromising on readiness. The system s
 - Balances operational goals with financial discipline
 
 
-![Smart Charging - Cost Optimized]({{ site.url }}/assets/smart-charging-cost-optimized.jpg)
+![Smart Charging - Cost Optimized]({{ site.url }}/assets/smart-charging-cost-optimized.png){width=100}
 
 ## The Smarts Behind the Modes
 
