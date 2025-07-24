@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Smart Charging, Done Right"
-date: 2019-04-28
+date: 2025-06-12
 description: How We Designed the Brains Behind Tenix Charging
 category: blog
 tag:
