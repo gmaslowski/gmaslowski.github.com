@@ -37,6 +37,10 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Roboto+Slab:wght@400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <!-- Feed -->
   {% feed_meta %}
   <!-- Favicons -->
@@ -49,16 +53,16 @@
   {% capture image %}{{ page.image }}{% endcapture %}
   {% unless image contains 'http://' or image contains 'https://' %}{% capture image %}{{ site.url }}/{{ image }}{% endcapture %}{% endunless %}
   <style type="text/css">
-    #posts.inner-post-page .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url({{ image }}) no-repeat;background-size: cover;}
+    #posts.inner-post-page .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ image }}) center/cover no-repeat;}
   </style>
   {% else %}
   <style type="text/css">
-    #posts.inner-post-page .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url({{ site.url }}/{{ site.background.default-post }}) no-repeat;background-size: cover;}
+    #posts.inner-post-page .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.default-post }}) center/cover no-repeat;}
   </style>
   {% endif %}
   <!-- Left Block Images for Home and Pages -->
   <style type="text/css">
-    #posts .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url({{ site.url }}/{{ site.background.post-list }}) no-repeat;background-size: cover, cover;}
-    .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url({{ site.url }}/{{ site.background.homepage }}) no-repeat;background-size: cover;}
+    #posts .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.post-list }}) center/cover no-repeat;}
+    .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.homepage }}) center/cover no-repeat;}
   </style>
 </head>

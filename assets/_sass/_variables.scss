@@ -1,15 +1,21 @@
 $white: #FFFFFF;
 $black: #000000;
-$gray: #d4d4d4;
-$overlay-color: #2c2d33;
-$green: #72cc96;
+$gray: #ebebeb;
+$overlay-color: #193747;
+$accent: #4fb1ba;
+$text-color: #333;
+$muted: #666;
 
 $red: #ee5f5b;
 $blue: #19B5FE;
 $yellow: #f89406;
 $aqua: #7FDBFF;
 
-$base-font: "weblysleek_uilight", sans-serif;
-$code-font: "LiberationMonoRegular",monospace;
+$sidebar-width: 21rem;
+
+$base-font: "Noto Sans", Helvetica, Arial, sans-serif;
+$heading-font: "Roboto Slab", Georgia, serif;
+$code-font: ui-monospace, "Fira Code", monospace;
 // break point
 $small: 750px;
+$sidebar-break: 64em;
