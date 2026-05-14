@@ -21,6 +21,8 @@ bundle install
 
 Local dev server runs at http://localhost:4000. The production URL is https://maslowski.cloud — note that `_config.yml` has the production URL hardcoded; the commented-out `url: http://localhost:4000` line can be swapped for local development if absolute URLs matter.
 
+Ruby is managed via **rbenv** (Ruby 3.3.0). All Jekyll commands must be prefixed: `eval "$(rbenv init -)" && bundle exec jekyll serve`.
+
 CI builds are done via Travis CI (`bundle exec jekyll build` with Ruby 2.3).
 
 ## Architecture
@@ -62,4 +64,20 @@ image: assets/image.png   # optional; shown in left panel for this post
 ---
 ```
 
-Images referenced in posts use `{{ site.url }}/assets/...` for absolute URLs.
+Images referenced in posts use `{{ site.url }}/assets/...` for absolute URLs. Images in `images/` (not `assets/`) use a path without a leading slash in front matter: `image: images/filename.jpg` (the post-list template prepends `{{ site.url }}/`).
+
+## Design system
+
+The site uses a Hydejack-inspired layout rebuilt from scratch. Key decisions:
+- Sidebar: fixed 21rem, teal accent `#4fb1ba`, dark teal gradient overlay, variables in `_variables.scss`
+- Post list: 3-column CSS Grid (`.posts-list`), equal-height cards via flexbox
+- About page: custom HTML classes — `.about-lanes`, `.about-table`, `.tech-stack-groups`, `.about-contact` — defined in `_site.scss`
+- Canvas particle animation in `assets/js/cursor-glow.js`, loaded via `_includes/scripts.html`
+- Share buttons removed; `_includes/share.html` is intentionally empty
+
+## Content notes
+
+Greg writes about EV fleet charging, distributed systems, and software architecture. Domain context:
+- Tenix (tenix.eu) builds Charge Management Software for electric bus fleets
+- VDV 261 spec (2024 edition) is at `~/Downloads/bekaVerlag-Order4558-VDV-Schrift 261_2024.pdf` — use `pypdf` to extract text if needed (`pip3 install pypdf`)
+- Blog voice: direct, technical, no buzzwords; show expertise through specifics, not claims
