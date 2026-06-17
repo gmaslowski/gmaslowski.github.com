@@ -3,39 +3,34 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% include head.html %}
 
 <body id="posts">
+  <div class="bg-deco"></div>
+  {% include header.html %}
 
-  <div class="block-left">
-    <div class="content">
-      {% include left.html %}
-      <div class="post-title-section">
-        <div class="section-line">Projects <em>/</em></div>
-      </div>
+  <article class="page-wrap">
+    <div class="post-head">
+      <div class="kicker">Projects</div>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<div class="meta"><span>{{ page.description }}</span></div>{% endif %}
     </div>
-  </div>
 
-  <div class="block-right">
-    <div class="content">
-      <ul class="posts-list">
-        {% for post in site.posts %}
-        {% if post.category == 'project' %}
-        <li>
-          <h2>
-            <a href="{{ post.link }}" class="post-title">
-              <span>{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</span>
-            </a>
-            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-          </h2>
-          <p>{{ post.description }}</p>
-        </li>
-        {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
+    <ul class="list-plain">
+      {% for post in site.posts %}
+      {% if post.category == 'project' %}
+      <li>
+        <h2><a href="{{ post.link }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h2>
+        <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
+        <p>{{ post.description }}</p>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </article>
+
+  {% include footer.html %}
   {% include scripts.html %}
 </body>
 
