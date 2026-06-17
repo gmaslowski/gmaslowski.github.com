@@ -37,8 +37,10 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .navbar .nav-mid a{color:#dfe4e6; font-size:15px; font-weight:500}
 .navbar .nav-mid a:hover, .navbar .nav-mid a.active{color:#fff}
 .navbar .nav-right{display:flex; align-items:center; gap:14px}
-.navbar .nav-right .social{display:flex; gap:12px}
-.navbar .nav-right .social a{color:#aeb6b9; font-size:15px}
+.navbar .nav-right .social{display:flex; align-items:center}
+.navbar .nav-right .social ul{display:flex; align-items:center; gap:13px; list-style:none; margin:0; padding:0}
+.navbar .nav-right .social li{margin:0}
+.navbar .nav-right .social a{color:#aeb6b9; font-size:15px; line-height:1}
 .navbar .nav-right .social a:hover{color:#fff}
 
 // ── Hero ───────────────────────────────────────────────────────────────────
