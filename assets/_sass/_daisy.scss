@@ -164,10 +164,9 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .tech-stack-label{font-size:12px; text-transform:uppercase; letter-spacing:1.4px; color:$faint}
 .tech-tags{margin-top:10px; line-height:2.1}
 .tech-tags code{font-family:$code-font; font-size:13px; color:darken($accent,6%); background:$accent-soft; border-radius:8px; padding:3px 9px; margin-right:4px}
-.about-contact{background:linear-gradient(135deg,#f2fbfb,#eef7ff); border:1px solid $line; border-radius:20px; padding:26px 28px; text-align:center; margin-top:10px}
-.about-contact h2{font-size:28px; font-weight:800; letter-spacing:-.4px; color:$ink; margin:0 0 10px}
-.about-contact p{margin:0 auto 16px; color:$muted; max-width:560px}
-.about-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px}
+.about-contact{background:linear-gradient(135deg,#f2fbfb,#eef7ff); border:1px solid $line; border-radius:20px; padding:24px 28px; text-align:left; margin:0}
+.about-contact p{margin:0 0 16px; color:$muted; max-width:640px}
+.about-cta{display:flex; gap:12px; justify-content:flex-start; flex-wrap:wrap; margin-top:6px}
 .lane-arch{color:#7c4dff}
 
 // ── About, redesigned: one calm rhythm, left-aligned ───────────────────────
@@ -176,7 +175,8 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .about-hero .about-lead{text-align:left; margin:0 0 10px; font-size:21px; line-height:1.4}
 .about-hero-text > p{margin:0; color:$muted}
 
-.about-roles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:30px 0}
+.inner-post .section-title{margin:44px 0 16px}
+.about-roles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:0}
 .role{border:1px solid $line; border-radius:18px; padding:20px 22px; box-shadow:0 8px 22px rgba(15,30,35,.05)}
 .role .role-label{display:block; font-family:$heading-font; font-weight:700; font-size:18px; color:$ink; margin-bottom:8px}
 .role p{color:$muted; font-size:15px; margin:0}
@@ -185,12 +185,12 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .role-ev{background:#eff6ff}
 
 .inner-post blockquote.about-quote{
-  margin:34px 0; padding:24px 28px; border:1px solid $line;
+  margin:44px 0; padding:24px 28px; border:1px solid $line;
   background:#f2fbfb; border-radius:18px; font-style:normal;
   font-size:19px; line-height:1.55; color:$ink;
 }
 
-.stack-panel{margin:34px 0; border:1px solid $line; border-radius:18px; padding:8px 24px 16px; background:#fff}
+.stack-panel{margin:0; border:1px solid $line; border-radius:18px; padding:10px 24px 16px; background:#fff}
 .stack-panel h2{font-size:28px; font-weight:800; letter-spacing:-.4px; color:$ink; margin:16px 0 10px}
 .stack-row{display:flex; gap:18px; align-items:baseline; padding:12px 0; border-top:1px solid $line}
 .stack-row:first-of-type{border-top:0}
@@ -202,7 +202,7 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .services-intro{color:$muted; margin:0 0 20px; max-width:700px}
 .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
 .service-card{background:#fff; border:1px solid $line; border-radius:18px; padding:20px 22px; box-shadow:0 8px 22px rgba(15,30,35,.05)}
-.service-card h3{font-size:18px; font-weight:700; margin:0 0 8px; color:$ink}
+.service-card h3{font-size:18px; font-weight:700; margin:0 0 8px; color:$ink; min-height:2.4em}
 .service-card p{color:$muted; font-size:15px; margin:0}
 .services-note{color:$faint; font-size:13px; margin:18px 0 0}
 
