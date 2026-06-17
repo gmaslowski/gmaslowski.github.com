@@ -170,6 +170,50 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .about-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px}
 .lane-arch{color:#7c4dff}
 
+// ── About, redesigned: one calm rhythm, left-aligned ───────────────────────
+.about-hero{display:flex; gap:28px; align-items:center; margin:6px 0 30px}
+.about-avatar{width:118px; height:118px; border-radius:24px; border:1px solid $line; object-fit:cover; flex:none}
+.about-hero .about-lead{text-align:left; margin:0 0 10px; font-size:21px; line-height:1.4}
+.about-hero-text > p{margin:0; color:$muted}
+
+.about-roles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:30px 0}
+.role{border-left:3px solid $line; padding:2px 0 4px 16px}
+.role .role-label{display:block; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:1.4px; margin-bottom:7px}
+.role p{color:$muted; font-size:15px; margin:0}
+.role-cto{border-left-color:$accent}   .role-cto .role-label{color:$accent}
+.role-arch{border-left-color:#7c4dff}  .role-arch .role-label{color:#7c4dff}
+.role-ev{border-left-color:#2f80ed}    .role-ev .role-label{color:#2f80ed}
+
+.inner-post blockquote.about-quote{
+  margin:34px 0; padding:20px 26px; border:0; border-left:4px solid $accent;
+  background:#f2fbfb; border-radius:0 14px 14px 0; font-style:normal;
+  font-size:19px; line-height:1.5; color:$ink;
+}
+
+.stack-panel{margin:34px 0; border:1px solid $line; border-radius:18px; padding:8px 24px 16px; background:#fff}
+.stack-panel h2{font-size:20px; margin:16px 0 6px}
+.stack-row{display:flex; gap:18px; align-items:baseline; padding:12px 0; border-top:1px solid $line}
+.stack-row:first-of-type{border-top:0}
+.stack-label{flex:none; width:128px; font-size:12px; text-transform:uppercase; letter-spacing:1.4px; color:$faint}
+.stack-row .tech-tags{margin:0; line-height:2}
+
+.about-services{margin:38px 0}
+.about-services h2{font-size:24px; margin:0 0 8px}
+.services-intro{color:$muted; margin:0 0 20px; max-width:700px}
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.service-card{background:#fff; border:1px solid $line; border-radius:18px; padding:20px 22px; box-shadow:0 8px 22px rgba(15,30,35,.05)}
+.service-card h3{font-size:16px; margin:0 0 8px; color:$ink}
+.service-card p{color:$muted; font-size:14px; margin:0}
+.services-note{color:$faint; font-size:14px; margin:18px 0 0}
+
+@media (max-width:760px){
+  .about-hero{flex-direction:column; align-items:flex-start; gap:18px}
+  .about-roles{grid-template-columns:1fr; gap:18px}
+  .services-grid{grid-template-columns:1fr}
+  .stack-row{flex-direction:column; gap:6px}
+  .stack-label{width:auto}
+}
+
 // ── Projects / simple lists ────────────────────────────────────────────────
 .list-plain{list-style:none; margin:0; padding:0}
 .list-plain li{border-bottom:1px solid $line; padding:24px 0}
