@@ -40,7 +40,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&family=Roboto+Slab:wght@400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <!-- Feed -->
   {% feed_meta %}
   <!-- Favicons -->
@@ -48,21 +48,4 @@
   <link rel="shortcut icon" href="{{ site.url }}/favicon.ico" />
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/main.css">
-  <!-- Left Block Image for Posts -->
-  {% if page.image %}
-  {% capture image %}{{ page.image }}{% endcapture %}
-  {% unless image contains 'http://' or image contains 'https://' %}{% capture image %}{{ site.url }}/{{ image }}{% endcapture %}{% endunless %}
-  <style type="text/css">
-    #posts.inner-post-page .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ image }}) center/cover no-repeat;}
-  </style>
-  {% else %}
-  <style type="text/css">
-    #posts.inner-post-page .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.default-post }}) center/cover no-repeat;}
-  </style>
-  {% endif %}
-  <!-- Left Block Images for Home and Pages -->
-  <style type="text/css">
-    #posts .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.post-list }}) center/cover no-repeat;}
-    .block-left {background: linear-gradient(to bottom, rgba(25,55,71,0.97) 0%, rgba(25,55,71,0.82) 50%, rgba(25,55,71,0.95) 100%), url({{ site.url }}/{{ site.background.homepage }}) center/cover no-repeat;}
-  </style>
 </head>
