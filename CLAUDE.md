@@ -81,3 +81,19 @@ Greg writes about EV fleet charging, distributed systems, and software architect
 - Tenix (tenix.eu) builds Charge Management Software for electric bus fleets
 - VDV 261 spec (2024 edition) is at `~/Downloads/bekaVerlag-Order4558-VDV-Schrift 261_2024.pdf` — use `pypdf` to extract text if needed (`pip3 install pypdf`)
 - Blog voice: direct, technical, no buzzwords; show expertise through specifics, not claims
+- Post history: started in 2014 as a Java/Spring/Docker/Kubernetes/Scala/Akka engineering blog; since 2025 the focus has shifted to EV charging (OCPP, ISO 15118, VDV 261). Newer posts go deep on real implementation problems, not overviews.
+
+## Build artifacts & generated files
+
+- `_site/` is Jekyll's build output — never hand-edit it; it is regenerated on every build and excluded from publishing via `_config.yml`.
+- `.jekyll-cache/` is local build cache; safe to delete, do not commit meaningful changes to it.
+- `Gemfile.lock` is committed and pins the dependency set — change it only via `bundle`.
+
+## Pre-approved tooling
+
+`.claude/settings.local.json` already permits, without prompting: `bundle exec *`, `bundle install *`, `ruby --version`, `rbenv versions/which *`, `rvm list *`, `brew list *`, `WebSearch`, and `WebFetch` for LinkedIn domains. Prefer these for build/dependency tasks.
+
+## Known issues
+
+- Analytics in `_config.yml` still points at a legacy Universal Analytics property (`google-analytics: UA-131478104-1`). Universal Analytics stopped collecting data after its shutdown, so this no longer records traffic — migrate to a GA4 measurement ID (or remove) if analytics are wanted.
+- `_config.yml` is read once at startup; restart `jekyll serve` after editing it.
