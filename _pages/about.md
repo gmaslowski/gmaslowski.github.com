@@ -74,12 +74,35 @@ Fifteen years in, the questions changed from *"how do we build this?"* to *"shou
 
 ---
 
+## Work with me
+
+Alongside my role at Tenix, I take on a small number of advisory and consulting engagements — where deep experience in software architecture and fleet electrification can genuinely move the needle.
+
+<div class="about-lanes">
+  <div class="about-lane">
+    <div class="lane-title lane-tech">Technical advisory</div>
+    <p>Fractional-CTO support, technical direction, and due diligence. The "should we build this, can it scale, and what breaks first?" conversations — for founders, investors, and teams growing a platform.</p>
+  </div>
+  <div class="about-lane">
+    <div class="lane-title lane-arch">Architecture &amp; reliability</div>
+    <p>Hands-on review and design for distributed, event-driven systems — APIs, data flow, observability, and the failure modes that only show up in production.</p>
+  </div>
+  <div class="about-lane">
+    <div class="lane-title lane-ev">EV charging &amp; fleet software</div>
+    <p>CSMS and smart-charging strategy grounded in real OCPP, ISO 15118 and VDV 261 work — from architecture to depot operations and multi-vendor coordination.</p>
+  </div>
+</div>
+
+<p>Engagements are selective and scoped to what I can do well — a focused review, an ongoing advisory cadence, or help shaping a platform from the ground up.</p>
+
+---
+
 <div class="about-contact">
-  <h2>Let's build something fun</h2>
-  <p>I like talking to people who build, operate, or are just curious about real-world technology — software architecture, engineering leadership, EV charging, IoT, smart energy. Got a wild idea, a hard problem, or just want to compare notes? Reach out. The door's open.</p>
+  <h2>Let's talk</h2>
+  <p>Whether it's a commercial engagement, a hard architecture problem, or a side project worth doing — if it's in my wheelhouse and it's interesting, I want to hear about it. The door's open for both serious work and good fun.</p>
   <div class="about-cta">
-    <a class="btn" href="https://linkedin.com/in/gmaslowski">Connect on LinkedIn</a>
-    <a class="btn btn-ghost" href="mailto:grzegorz@tenix.eu">Say hello</a>
+    <a class="btn" href="mailto:grzegorz@tenix.eu?subject=Working%20together">Work with me</a>
+    <a class="btn btn-ghost" href="https://linkedin.com/in/gmaslowski">Connect on LinkedIn</a>
     <a class="btn btn-ghost" href="https://github.com/gmaslowski">GitHub</a>
   </div>
 </div>
