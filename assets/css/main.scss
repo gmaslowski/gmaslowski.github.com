@@ -4,10 +4,8 @@ sitemap: false
 
 @import "variables";
 @import "reset";
-@import "base";
-@import "site";
-@import "utilities";
 @import "syntax";
+@import "daisy"; // daisyUI-style theme — replaces legacy _base + _site
 @import "vendor/fonts";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/magnific-popup/magnific-popup";

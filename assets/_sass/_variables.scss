@@ -1,21 +1,32 @@
-$white: #FFFFFF;
-$black: #000000;
-$gray: #ebebeb;
-$overlay-color: #193747;
-$accent: #4fb1ba;
-$text-color: #333;
-$muted: #666;
+// ── daisyUI-style light theme palette ─────────────────────────────────────
+$accent:      #0e9aa7;   // teal (links, buttons, kickers) — contrast-safe on white
+$accent-2:    #14b8c4;   // brighter teal for the two-tone hero highlight
+$accent-soft: #cdeeee;   // badge / soft fills
+$ink:         #0f1417;   // primary text
+$muted:       #5b6770;   // secondary text
+$faint:       #9aa6ad;   // meta / dates
+$line:        #e9eef0;   // borders / hairlines
+$card:        #ffffff;   // card surface
+$navbar-bg:   #0b0d0e;   // floating pill navbar
 
-$red: #ee5f5b;
-$blue: #19B5FE;
-$yellow: #f89406;
-$aqua: #7FDBFF;
+// Legacy aliases (kept so _syntax / vendor partials still compile)
+$white:        #ffffff;
+$black:        #0b0d0e;
+$gray:         $line;
+$overlay-color:$navbar-bg;
+$text-color:   $ink;
+$muted-color:  $muted;
+$red:          #ef5b5b;
+$blue:         #2f80ed;
+$yellow:       $accent;
+$aqua:         $accent-2;
 
-$sidebar-width: 21rem;
+$sidebar-width: 21rem; // unused, retained for compatibility
 
-$base-font: "Noto Sans", Helvetica, Arial, sans-serif;
-$heading-font: "Roboto Slab", Georgia, serif;
-$code-font: ui-monospace, "Fira Code", monospace;
-// break point
+$base-font:    "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+$heading-font: "Poppins", "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+$code-font:    "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+// break points
 $small: 750px;
 $sidebar-break: 64em;
