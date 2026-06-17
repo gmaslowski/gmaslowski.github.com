@@ -177,15 +177,17 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .about-hero-text > p{margin:0; color:$muted}
 
 .about-roles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:30px 0}
-.role{border-left:3px solid $line; padding:2px 0 4px 16px}
+.role{border:1px solid $line; border-radius:18px; padding:20px 22px; box-shadow:0 8px 22px rgba(15,30,35,.05)}
 .role .role-label{display:block; font-weight:700; font-size:16px; color:$ink; margin-bottom:8px}
 .role p{color:$muted; font-size:15px; margin:0}
-.role-cto, .role-arch, .role-ev{border-left-color:$accent}
+.role-cto{background:#f0fbfb}
+.role-arch{background:#f5f3ff}
+.role-ev{background:#eff6ff}
 
 .inner-post blockquote.about-quote{
-  margin:34px 0; padding:20px 26px; border:0; border-left:4px solid $accent;
-  background:#f2fbfb; border-radius:0 14px 14px 0; font-style:normal;
-  font-size:19px; line-height:1.5; color:$ink;
+  margin:34px 0; padding:24px 28px; border:1px solid $line;
+  background:#f2fbfb; border-radius:18px; font-style:normal;
+  font-size:19px; line-height:1.55; color:$ink;
 }
 
 .stack-panel{margin:34px 0; border:1px solid $line; border-radius:18px; padding:8px 24px 16px; background:#fff}
