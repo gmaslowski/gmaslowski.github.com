@@ -3,26 +3,21 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% include head.html %}
 
 <body id="homepage">
+  <div class="bg-deco"></div>
+  {% include header.html %}
 
-  <div class="block-left">
-    <div class="content">
-      {% include left.html %}
+  <article class="page-wrap">
+    <div class="inner-post about-info">
+      {{ content }}
     </div>
-  </div>
+  </article>
 
-  <div class="block-right">
-    <div class="content">
-      <div class="about-info">
-        {{ content }}
-      </div>
-    </div>
-  </div>
+  {% include footer.html %}
   {% include scripts.html %}
-  <script src="{{ site.url }}/assets/js/canvas.js"></script>
 </body>
 
 </html>

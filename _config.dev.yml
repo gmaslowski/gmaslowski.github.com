@@ -1,0 +1,5 @@
+# Local development overrides. Use with:
+#   bundle exec jekyll serve --config _config.yml,_config.dev.yml
+# Overrides the production url so assets, CSS and nav links resolve to the
+# local server instead of https://maslowski.cloud.
+url: "http://localhost:4000"
