@@ -14,6 +14,7 @@ image: images/profile.jpg
   </div>
 </div>
 
+<h2 class="section-title">What I do</h2>
 <div class="about-roles">
   <div class="role role-cto">
     <span class="role-label">CTO</span>
@@ -31,8 +32,8 @@ image: images/profile.jpg
 
 <blockquote class="about-quote">Good technology isn't clever for its own sake. Sometimes the right call is a sophisticated system, sometimes it's deleting code, sometimes it's saying no. The job is knowing the difference, and explaining it to an engineer, a driver, and a CFO in the same afternoon.</blockquote>
 
+<h2 class="section-title">Stack</h2>
 <section class="stack-panel">
-  <h2>Stack</h2>
   <div class="stack-row">
     <span class="stack-label">Languages</span>
     <div class="tech-tags"><code>Java</code> <code>Scala</code> <code>Kotlin</code> <code>Go</code> <code>C#</code></div>
@@ -51,28 +52,26 @@ image: images/profile.jpg
   </div>
 </section>
 
-<section class="about-services">
-  <h2>Work with me</h2>
-  <p class="services-intro">Alongside my role at Tenix, I take on a small number of advisory and consulting engagements, where deep experience in software architecture and fleet electrification genuinely moves the needle.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>Technical advisory</h3>
-      <p>Fractional-CTO support, technical direction, and due diligence: the "should we build this, can it scale, what breaks first?" calls for founders, investors, and scaling teams.</p>
-    </div>
-    <div class="service-card">
-      <h3>Architecture &amp; reliability</h3>
-      <p>Hands-on review and design for distributed, event-driven systems: APIs, data flow, observability, and the failure modes that only show up in production.</p>
-    </div>
-    <div class="service-card">
-      <h3>EV charging &amp; fleet software</h3>
-      <p>CSMS and smart-charging strategy grounded in real OCPP, ISO 15118 and VDV 261 work, from architecture to depot operations and multi-vendor coordination.</p>
-    </div>
+<h2 class="section-title">Work with me</h2>
+<p class="services-intro">Alongside my role at Tenix, I take on a small number of advisory and consulting engagements, where deep experience in software architecture and fleet electrification genuinely moves the needle.</p>
+<div class="services-grid">
+  <div class="service-card">
+    <h3>Technical advisory</h3>
+    <p>Fractional-CTO support, technical direction, and due diligence: the "should we build this, can it scale, what breaks first?" calls for founders, investors, and scaling teams.</p>
   </div>
-  <p class="services-note">Engagements are selective and scoped to what I can do well: a focused review, an ongoing advisory cadence, or help shaping a platform from the ground up.</p>
-</section>
+  <div class="service-card">
+    <h3>Architecture &amp; reliability</h3>
+    <p>Hands-on review and design for distributed, event-driven systems: APIs, data flow, observability, and the failure modes that only show up in production.</p>
+  </div>
+  <div class="service-card">
+    <h3>EV charging &amp; fleet software</h3>
+    <p>CSMS and smart-charging strategy grounded in real OCPP, ISO 15118 and VDV 261 work, from architecture to depot operations and multi-vendor coordination.</p>
+  </div>
+</div>
+<p class="services-note">Engagements are selective and scoped to what I can do well: a focused review, an ongoing advisory cadence, or help shaping a platform from the ground up.</p>
 
+<h2 class="section-title">Let's talk</h2>
 <div class="about-contact">
-  <h2>Let's talk</h2>
   <p>Whether it's a commercial engagement, a hard architecture problem, or a side project worth doing, if it's in my wheelhouse and it's interesting, I want to hear about it. The door's open for both serious work and good fun.</p>
   <div class="about-cta">
     <a class="btn" href="mailto:gregmaslowski@gmail.com?subject=Working%20together">Work with me</a>
