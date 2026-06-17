@@ -101,7 +101,7 @@ Alongside my role at Tenix, I take on a small number of advisory and consulting 
   <h2>Let's talk</h2>
   <p>Whether it's a commercial engagement, a hard architecture problem, or a side project worth doing — if it's in my wheelhouse and it's interesting, I want to hear about it. The door's open for both serious work and good fun.</p>
   <div class="about-cta">
-    <a class="btn" href="mailto:grzegorz@tenix.eu?subject=Working%20together">Work with me</a>
+    <a class="btn" href="mailto:gregmaslowski@gmail.com?subject=Working%20together">Work with me</a>
     <a class="btn btn-ghost" href="https://linkedin.com/in/gmaslowski">Connect on LinkedIn</a>
     <a class="btn btn-ghost" href="https://github.com/gmaslowski">GitHub</a>
   </div>
