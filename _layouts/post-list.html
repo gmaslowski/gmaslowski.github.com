@@ -15,9 +15,35 @@ layout: compress
 
   <section class="hero">
     <span class="pill">CTO &middot; Architect &middot; EV enthusiast</span>
-    <h1>Software architecture<br><span class="teal">meets electric fleets</span></h1>
+    <h1 id="heroRotate" class="hero-rotate">Lead. Architect. <span class="teal">Electrify.</span></h1>
     <p class="sub">CTO at Tenix. I write about distributed systems, EV charging, and the messy reality of running software in production.</p>
   </section>
+
+  <script>
+    (function () {
+      var el = document.getElementById('heroRotate');
+      if (!el) return;
+      var phrases = [
+        'Lead. Architect. <span class="teal">Electrify.</span>',
+        'I lead teams, design systems, and <span class="teal">electrify fleets.</span>',
+        'Leading teams. Designing systems. <span class="teal">Electrifying fleets.</span>',
+        'Build the team. Design the system. <span class="teal">Electrify the fleet.</span>',
+        'CTO by title, architect by habit, <span class="teal">EV nerd by choice.</span>',
+        'Teams, systems, and <span class="teal">electric fleets.</span>',
+        'Run the org. Own the architecture. <span class="teal">Electrify everything.</span>'
+      ];
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var i = 0;
+      setInterval(function () {
+        el.classList.add('is-out');
+        setTimeout(function () {
+          i = (i + 1) % phrases.length;
+          el.innerHTML = phrases[i];
+          el.classList.remove('is-out');
+        }, reduce ? 0 : 420);
+      }, 3800);
+    })();
+  </script>
 
   <div class="wrap">
     <section class="section">
