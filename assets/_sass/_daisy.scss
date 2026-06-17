@@ -62,7 +62,7 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 
 // ── Section heading ────────────────────────────────────────────────────────
 .section{padding:44px 0 6px}
-.section-title{font-size:32px; font-weight:800; letter-spacing:-.6px; margin-bottom:24px}
+.section-title{font-size:26px; font-weight:800; letter-spacing:-.4px; color:$ink; margin-bottom:24px}
 
 // ── Article card grid ──────────────────────────────────────────────────────
 .cards{display:grid; grid-template-columns:1fr 1fr; gap:24px; list-style:none}
@@ -99,7 +99,7 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
   background-size:cover; background-position:center;
 }
 .featured .fbody{padding:10px 26px 10px 6px}
-.kicker{color:$accent; font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase}
+.kicker{color:$accent; font-weight:700; font-size:12px; letter-spacing:1.6px; text-transform:uppercase}
 .featured h3{font-size:32px; font-weight:800; line-height:1.1; margin:12px 0 14px}
 .featured h3 a{color:$ink}
 .featured p{color:$muted; font-size:16px; margin-bottom:18px}
@@ -165,7 +165,7 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .tech-tags{margin-top:10px; line-height:2.1}
 .tech-tags code{font-family:$code-font; font-size:13px; color:darken($accent,6%); background:$accent-soft; border-radius:8px; padding:3px 9px; margin-right:4px}
 .about-contact{background:linear-gradient(135deg,#f2fbfb,#eef7ff); border:1px solid $line; border-radius:20px; padding:26px 28px; text-align:center; margin-top:10px}
-.about-contact h2{margin:0 0 10px}
+.about-contact h2{font-size:26px; font-weight:800; letter-spacing:-.4px; color:$ink; margin:0 0 10px}
 .about-contact p{margin:0 auto 16px; color:$muted; max-width:560px}
 .about-cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:6px}
 .lane-arch{color:#7c4dff}
@@ -178,11 +178,9 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 
 .about-roles{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin:30px 0}
 .role{border-left:3px solid $line; padding:2px 0 4px 16px}
-.role .role-label{display:block; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:1.4px; margin-bottom:7px}
+.role .role-label{display:block; font-weight:700; font-size:16px; color:$ink; margin-bottom:8px}
 .role p{color:$muted; font-size:15px; margin:0}
-.role-cto{border-left-color:$accent}   .role-cto .role-label{color:$accent}
-.role-arch{border-left-color:#7c4dff}  .role-arch .role-label{color:#7c4dff}
-.role-ev{border-left-color:#2f80ed}    .role-ev .role-label{color:#2f80ed}
+.role-cto, .role-arch, .role-ev{border-left-color:$accent}
 
 .inner-post blockquote.about-quote{
   margin:34px 0; padding:20px 26px; border:0; border-left:4px solid $accent;
@@ -191,18 +189,18 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 }
 
 .stack-panel{margin:34px 0; border:1px solid $line; border-radius:18px; padding:8px 24px 16px; background:#fff}
-.stack-panel h2{font-size:20px; margin:16px 0 6px}
+.stack-panel h2{font-size:26px; font-weight:800; letter-spacing:-.4px; color:$ink; margin:16px 0 10px}
 .stack-row{display:flex; gap:18px; align-items:baseline; padding:12px 0; border-top:1px solid $line}
 .stack-row:first-of-type{border-top:0}
-.stack-label{flex:none; width:128px; font-size:12px; text-transform:uppercase; letter-spacing:1.4px; color:$faint}
+.stack-label{flex:none; width:128px; font-size:12px; text-transform:uppercase; letter-spacing:1.6px; font-weight:700; color:$accent}
 .stack-row .tech-tags{margin:0; line-height:2}
 
 .about-services{margin:38px 0}
-.about-services h2{font-size:24px; margin:0 0 8px}
+.about-services h2{font-size:26px; font-weight:800; letter-spacing:-.4px; color:$ink; margin:0 0 8px}
 .services-intro{color:$muted; margin:0 0 20px; max-width:700px}
 .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
 .service-card{background:#fff; border:1px solid $line; border-radius:18px; padding:20px 22px; box-shadow:0 8px 22px rgba(15,30,35,.05)}
-.service-card h3{font-size:16px; margin:0 0 8px; color:$ink}
+.service-card h3{font-size:16px; font-weight:700; margin:0 0 8px; color:$ink}
 .service-card p{color:$muted; font-size:14px; margin:0}
 .services-note{color:$faint; font-size:14px; margin:18px 0 0}
 
