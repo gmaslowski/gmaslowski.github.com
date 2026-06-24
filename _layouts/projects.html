@@ -17,22 +17,20 @@ layout: compress
       {% if page.description %}<div class="meta"><span>{{ page.description }}</span></div>{% endif %}
     </div>
 
-    <ul class="posts-list">
+    <ul class="project-showcase">
       {% for post in site.posts %}
       {% if post.category == 'project' %}
-      <li class="post-card">
+      <li class="project-row">
         {% if post.image %}
-        <a class="post-card-image-link" href="{{ post.link }}">
-          <img class="post-card-image" src="{{ site.url }}/{{ post.image }}" alt="{{ post.title | strip_html }} graphic" loading="lazy">
+        <a class="project-figure" href="{{ post.link }}">
+          <img src="{{ site.url }}/{{ post.image }}" alt="{{ post.title | strip_html }} graphic" loading="lazy">
         </a>
         {% endif %}
-        <div class="post-card-content">
-          <div class="post-card-meta">
-            <span class="date">{{ post.date | date: '%d %b %Y' }}</span>
-          </div>
-          <h2><a class="post-title" href="{{ post.link }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h2>
-          <p class="post-excerpt">{{ post.description }}</p>
-          <a class="post-read-more" href="{{ post.link }}">View project &rarr;</a>
+        <div class="project-info">
+          <span class="project-date">{{ post.date | date: '%d %b %Y' }}</span>
+          <h2><a href="{{ post.link }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>" }}</a></h2>
+          <p>{{ post.description }}</p>
+          <a class="project-link" href="{{ post.link }}">View project &rarr;</a>
         </div>
       </li>
       {% endif %}
