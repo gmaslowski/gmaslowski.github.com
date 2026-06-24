@@ -4,6 +4,7 @@ title: "Engineering verticals: how I stopped being the single point of failure"
 date: 2026-06-18
 description: How a 7-developer team running 160+ repositories handed every non-functional concern to its CTO by default, and the cross-cutting verticals we used to fix it.
 category: blog
+published: false
 tag:
 - engineering management
 - architecture
