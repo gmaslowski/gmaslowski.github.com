@@ -230,6 +230,33 @@ h1,h2,h3,h4{font-family:$heading-font; letter-spacing:-.3px; line-height:1.12}
 .list-plain p{color:$muted; margin:6px 0 0}
 .tag-group h2{color:$accent; border-bottom:1px solid $line; padding-bottom:8px; margin:30px 0 6px}
 
+// ── Projects: alternating side-by-side showcase ─────────────────────────────
+.project-showcase{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:56px}
+.project-row{display:grid; grid-template-columns:1.1fr 1fr; gap:40px; align-items:center; margin:0}
+.project-row:nth-child(even) .project-figure{order:2}
+.project-row:nth-child(even) .project-info{order:1}
+.project-figure{display:block; border:none; line-height:0; border-radius:10px; overflow:hidden;
+  position:relative; padding-top:56.25%; box-shadow:2px 4px 20px rgba(0,0,0,.16);
+  transition:transform .25s ease, box-shadow .25s ease}
+.project-figure img{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; margin:0; transition:transform .4s ease}
+.project-figure:hover{transform:translateY(-4px); box-shadow:2px 8px 28px rgba(0,0,0,.22)}
+.project-figure:hover img{transform:scale(1.04)}
+.project-info .project-date{display:block; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:$faint; margin-bottom:8px}
+.project-info h2{font-family:$heading-font; font-size:26px; font-weight:700; line-height:1.2; margin:0 0 12px}
+.project-info h2 a{color:$ink; border:none}
+.project-info h2 a:hover{color:$accent}
+.project-info p{color:$muted; font-size:15px; line-height:1.65; margin:0 0 16px}
+.project-info .project-link{font-size:12px; font-weight:600; color:$accent; text-transform:uppercase; letter-spacing:.08em; border:none}
+.project-info .project-link:hover{color:darken($accent,10%)}
+
+@media screen and (max-width:640px){
+  .project-showcase{gap:40px}
+  .project-row{grid-template-columns:1fr; gap:18px}
+  .project-row:nth-child(even) .project-figure{order:1}
+  .project-row:nth-child(even) .project-info{order:2}
+  .project-info h2{font-size:22px}
+}
+
 // ── Footer ─────────────────────────────────────────────────────────────────
 .site-footer{border-top:1px solid $line; color:$faint; font-size:13px; text-align:center; padding:40px 20px; margin-top:30px}
 .site-footer a{color:$muted}
