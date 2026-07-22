@@ -1,0 +1,9 @@
+---
+layout: project
+title: teison-ha
+date: 2026-07-22
+description: An unofficial Home Assistant integration for Teison Mini EV chargers, driven entirely through the vendor cloud API — no local network access or OCPP required. A DataUpdateCoordinator polls the "My Teison" / "Teison Me" platforms every 30 seconds over HTTP endpoints reverse-engineered from the mobile apps, with automatic session-token refresh. Exposes live status, power, session and total energy, temperature, and per-phase voltage/current, plus start/stop and max-current control. Config-flow UI setup, multi-charger support, Python, MIT.
+category: project
+image: assets/teison-ha.png
+link: https://github.com/gmaslowski/teison-ha
+---
